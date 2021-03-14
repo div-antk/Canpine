@@ -51,11 +51,16 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.white)
                         .modifier(CardModifier())
-                        .padding(.all, 8)
+                        .padding(.all, 16)
                     }
                 }
             }
-            .navigationTitle("就職が決まりました")
+            .navigationTitle("カンパイ待ちです")
+            .navigationBarItems(trailing: Button(action: {
+                // Action
+            }) {
+                Image(systemName: "gearshape.fill")
+            })
         }
     }
 }
