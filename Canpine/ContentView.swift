@@ -56,9 +56,7 @@ struct ContentView: View {
                                 }.padding()
                                 
                                 }
-                            .alert(isPresented: $isConfirm) {
-                                Alert(title: Text("\(user)とカンパイする"))
-                            }
+                            
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.white)
@@ -85,11 +83,6 @@ struct CardModifier: ViewModifier {
     }
 }
 
-//struct Confirm: View {
-//    var body: some View {
-//        Alert(title: Text("fff"))
-//    }
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
