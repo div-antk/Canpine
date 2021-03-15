@@ -38,22 +38,26 @@ struct ContentView: View {
                                     VStack(alignment: .leading) {
                                         Text(user)
                                             .font(.system(size: 24, weight: .bold))
+                                            .foregroundColor(.black)
                                         Text("東京都から")
                                             .font(.system(size: 16, weight: .bold))
                                             .foregroundColor(.gray)
                                             .padding(.top, 2)
                                         Text("誕生日です")
                                             .font(.system(size: 16, weight: .bold))
+                                            .foregroundColor(.black)
                                             .padding(.top, 2)
                                         Text("ビール")
                                             .font(.system(size: 32, weight: .bold))
+                                            .foregroundColor(.black)
                                             .padding(.top, 4)
                                     }
                                     Spacer()
                                 }.padding()
-                                .alert(isPresented: $isConfirm) {
-                                    Alert(title: Text("\(user)とカンパイする"))
+                                
                                 }
+                            .alert(isPresented: $isConfirm) {
+                                Alert(title: Text("\(user)とカンパイする"))
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
