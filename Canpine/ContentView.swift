@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var users: [String] = ["ダニエル", "ゲオルグ", "ミヤギ", "アンド"]
+    
     @State var isConfirm = false
     
     init() {
