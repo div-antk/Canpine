@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State var users: [String] = ["ダニエル", "ゲオルグ", "ミヤギ", "アンド"]
+    @State var isConfirm = false
+    
     init() {
         UITableView.appearance().backgroundColor = .clear
     }
@@ -20,38 +22,44 @@ struct ContentView: View {
                 Color.yellow
                     .edgesIgnoringSafeArea(.all)
                 ScrollView {
-                    VStack {
-                        //                    List {
+                    VStack(spacing: 24) {
+                        
                         ForEach(users, id: \.self) { user in
                             
-                            HStack {
-                                Image(systemName: "person.circle")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 100)
-                                    .padding(.all, 20)
-                                VStack(alignment: .leading) {
-                                    Text(user)
-                                        .font(.system(size: 24, weight: .bold))
-                                    Text("東京都から")
-                                        .font(.system(size: 16, weight: .bold))
-                                        .foregroundColor(.gray)
-                                        .padding(.top, 2)
-                                    Text("誕生日です")
-                                        .font(.system(size: 16, weight: .bold))
-                                        .padding(.top, 2)
-                                    Text("ビール")
-                                        .font(.system(size: 32, weight: .bold))
-                                        .padding(.top, 4)
+                            Button(action: {
+                                self.isConfirm = true
+                            }) {
+                                HStack {
+                                    Image(systemName: "person.circle")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100)
+                                        .padding(.all, 20)
+                                    VStack(alignment: .leading) {
+                                        Text(user)
+                                            .font(.system(size: 24, weight: .bold))
+                                        Text("東京都から")
+                                            .font(.system(size: 16, weight: .bold))
+                                            .foregroundColor(.gray)
+                                            .padding(.top, 2)
+                                        Text("誕生日です")
+                                            .font(.system(size: 16, weight: .bold))
+                                            .padding(.top, 2)
+                                        Text("ビール")
+                                            .font(.system(size: 32, weight: .bold))
+                                            .padding(.top, 4)
+                                    }
+                                    Spacer()
+                                }.padding()
+                                .alert(isPresented: $isConfirm) {
+                                    Alert(title: Text("\(user)とカンパイする"))
                                 }
-                                Spacer()
-                            }.padding()
-                            
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.white)
                         .modifier(CardModifier())
-                        .padding(.all, 16)
+                        .padding(.horizontal, 16)
                     }
                 }
             }
@@ -72,6 +80,12 @@ struct CardModifier: ViewModifier {
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
     }
 }
+
+//struct Confirm: View {
+//    var body: some View {
+//        Alert(title: Text("fff"))
+//    }
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
