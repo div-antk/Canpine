@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-//    @State var users: [String] = ["ダニエル", "ゲオルグ", "ミヤギ", "アンド"]
-    
     @State var isConfirm = false
     
     init() {
@@ -25,9 +23,9 @@ struct ContentView: View {
                 ScrollView {
                     VStack(spacing: 24) {
                         
-//                        ForEach(users, id: \.self) { user in
+                        //                        ForEach(users, id: \.self) { user in
                         ForEach(usersData) { user in
-
+                            
                             
                             Button(action: {
                                 self.isConfirm = true
@@ -36,35 +34,39 @@ struct ContentView: View {
                                     Image(systemName: "person.circle")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 100)
-                                        .padding(.all, 20)
+                                        .frame(width: 60)
+                                        .padding(.all, 12)
+                                    
                                     VStack(alignment: .leading) {
-                                        Text(user.name)
+                                        HStack {
+                                            Text(user.name)
+                                                .font(.system(size: 16, weight: .bold))
+                                                .foregroundColor(.black)
+                                            Text("🍻\(user.star)")
+                                                .font(.system(size: 16))
+                                                .foregroundColor(.black)
+                                        }
+                                        Text("\(user.place)から")
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.gray)
+                                            .padding(.top, 1)
+                                        Text("\(user.status)です")
+                                            .font(.system(size: 16))
+                                            .foregroundColor(.black)
+                                            .padding(.top, 2)
+                                        Text(user.item)
                                             .font(.system(size: 24, weight: .bold))
                                             .foregroundColor(.black)
-                                        Text("東京都から")
-                                            .font(.system(size: 16, weight: .bold))
-                                            .foregroundColor(.gray)
                                             .padding(.top, 2)
-                                        Text("誕生日です")
-                                            .font(.system(size: 16, weight: .bold))
-                                            .foregroundColor(.black)
-                                            .padding(.top, 2)
-                                        Text("ビール")
-                                            .font(.system(size: 32, weight: .bold))
-                                            .foregroundColor(.black)
-                                            .padding(.top, 4)
                                     }
                                     Spacer()
                                 }.padding()
-                                
-                                }
-                            
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.white)
                         .modifier(CardModifier())
-                        .padding(.horizontal, 16)
+                        .padding(.horizontal, 24)
                     }
                 }
             }
