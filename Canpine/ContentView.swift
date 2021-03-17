@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var users: [String] = ["ダニエル", "ゲオルグ", "ミヤギ", "アンド"]
+//    @State var users: [String] = ["ダニエル", "ゲオルグ", "ミヤギ", "アンド"]
     
     @State var isConfirm = false
     
@@ -25,7 +25,9 @@ struct ContentView: View {
                 ScrollView {
                     VStack(spacing: 24) {
                         
-                        ForEach(users, id: \.self) { user in
+//                        ForEach(users, id: \.self) { user in
+                        ForEach(usersData) { user in
+
                             
                             Button(action: {
                                 self.isConfirm = true
@@ -37,7 +39,7 @@ struct ContentView: View {
                                         .frame(width: 100)
                                         .padding(.all, 20)
                                     VStack(alignment: .leading) {
-                                        Text(user)
+                                        Text(user.name)
                                             .font(.system(size: 24, weight: .bold))
                                             .foregroundColor(.black)
                                         Text("東京都から")
