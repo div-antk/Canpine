@@ -14,6 +14,7 @@
 		3B0183CB25FC37CB0003CBB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183CA25FC37CB0003CBB6 /* Preview Assets.xcassets */; };
 		3B0183CE25FC37CB0003CBB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183CC25FC37CB0003CBB6 /* LaunchScreen.storyboard */; };
 		3B0183D9260029CB0003CBB6 /* usersData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183D8260029CB0003CBB6 /* usersData.json */; };
+		3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183DC26017F520003CBB6 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3B0183CD25FC37CB0003CBB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B0183CF25FC37CB0003CBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B0183D8260029CB0003CBB6 /* usersData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usersData.json; sourceTree = "<group>"; };
+		3B0183DC26017F520003CBB6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3B0183C125FC37C60003CBB6 /* AppDelegate.swift */,
 				3B0183D8260029CB0003CBB6 /* usersData.json */,
 				3B0183C325FC37C60003CBB6 /* SceneDelegate.swift */,
+				3B0183DC26017F520003CBB6 /* UserModel.swift */,
 				3B0183C525FC37C60003CBB6 /* ContentView.swift */,
 				3B0183C725FC37CB0003CBB6 /* Assets.xcassets */,
 				3B0183CC25FC37CB0003CBB6 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				3B0183C225FC37C60003CBB6 /* AppDelegate.swift in Sources */,
 				3B0183C425FC37C60003CBB6 /* SceneDelegate.swift in Sources */,
+				3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */,
 				3B0183C625FC37C60003CBB6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
