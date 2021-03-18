@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 struct ContentView: View {
     
     @State var isConfirm = false
+    @EnvironmentObject var partialSheetManager: PartialSheetManager
+    
+    let sheetManager: PartialSheetManager = PartialSheetManager()
+//    let contentView = ContentView().environmentObject(sheetManager)
+
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -76,7 +82,7 @@ struct ContentView: View {
             }) {
                 Image(systemName: "gearshape.fill")
             })
-        }
+        }.addPartialSheet()
     }
 }
 
