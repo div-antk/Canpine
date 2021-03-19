@@ -17,6 +17,7 @@
 		3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183DC26017F520003CBB6 /* UserModel.swift */; };
 		3B0183E126017FDF0003CBB6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183E026017FDF0003CBB6 /* UserViewModel.swift */; };
 		3BEA42F92602D1BB00194FBE /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 3BEA42F82602D1BB00194FBE /* PartialSheet */; };
+		3BEA42FC2604197000194FBE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA42FB2604197000194FBE /* ConfigView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3B0183D8260029CB0003CBB6 /* usersData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usersData.json; sourceTree = "<group>"; };
 		3B0183DC26017F520003CBB6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3B0183E026017FDF0003CBB6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3BEA42FB2604197000194FBE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3B0183DF26017FCC0003CBB6 /* Model */,
 				3B0183E426017FE60003CBB6 /* ViewModel */,
 				3B0183C525FC37C60003CBB6 /* ContentView.swift */,
+				3BEA42FB2604197000194FBE /* ConfigView.swift */,
 				3B0183C725FC37CB0003CBB6 /* Assets.xcassets */,
 				3B0183CC25FC37CB0003CBB6 /* LaunchScreen.storyboard */,
 				3B0183CF25FC37CB0003CBB6 /* Info.plist */,
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BEA42FC2604197000194FBE /* ConfigView.swift in Sources */,
 				3B0183C225FC37C60003CBB6 /* AppDelegate.swift in Sources */,
 				3B0183C425FC37C60003CBB6 /* SceneDelegate.swift in Sources */,
 				3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */,

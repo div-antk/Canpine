@@ -11,12 +11,8 @@ import PartialSheet
 struct ContentView: View {
     
     @State var isConfirm = false
-    @EnvironmentObject var partialSheetManager: PartialSheetManager
-    
-    let sheetManager: PartialSheetManager = PartialSheetManager()
-//    let contentView = ContentView().environmentObject(sheetManager)
-
-    
+    @State var showPartial = false
+        
     init() {
         UITableView.appearance().backgroundColor = .clear
     }
@@ -28,11 +24,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack(spacing: 24) {
-                        
-                        //                        ForEach(users, id: \.self) { user in
                         ForEach(usersData) { user in
-                            
-                            
                             Button(action: {
                                 self.isConfirm = true
                             }) {
@@ -78,11 +70,15 @@ struct ContentView: View {
             }
             .navigationTitle("カンパイ待ちです")
             .navigationBarItems(trailing: Button(action: {
-                // Action
+                showPartial.toggle()
             }) {
                 Image(systemName: "gearshape.fill")
             })
-        }.addPartialSheet()
+        }
+        .addPartialSheet()
+        .partialSheet(isPresented: $showPartial) {
+            ConfigView()
+        }
     }
 }
 
