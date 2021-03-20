@@ -11,20 +11,15 @@ import PartialSheet
 struct ConfigView: View {
     
     @EnvironmentObject var partialSheetManager: PartialSheetManager
-    var strengths = ["Mild", "Medium", "Mature"]
-    @State private var selectedStrength = 0
+    @State var status = 
     
     var body: some View {
         VStack {
             VStack {
-                Text("Settings Panel").font(.headline)
-                Picker(selection: $selectedStrength, label: EmptyView()) {
-                    ForEach(0 ..< strengths.count) {
-                        Text(self.strengths[$0])
-                    }
-                }.onTapGesture {
-                    // Fixes issue with scroll
-                }
+                Text("あなたの設定").font(.headline)
+            }
+            VStack {
+                Text("ステータス").font(.headline)
             }
             .padding()
             .frame(height: 250)
