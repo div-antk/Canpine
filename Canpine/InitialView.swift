@@ -19,7 +19,7 @@ struct InitialView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 VStack {
-                    Text("ようこそCatpineへ！")
+                    Text("ようこそCanpineへ！")
                         .font(.headline)
                         .foregroundColor(.black)
                     Text("カンパイしましょう🍻")
@@ -30,18 +30,17 @@ struct InitialView: View {
                     TextField("あなたの名前", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 60)
-
                     TextField("email", text: $email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 60)
-
-                    TextField("password", text: $password)
+                        .keyboardType(.emailAddress)
+                    SecureField("password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 60)
                 }.padding(.bottom, 20)
                 VStack {
                     Button("👍") {
-                        
+                        print(name, email, password)
                     }.frame(width: 60, height: 60)
                     .background(Color.white)
                     .cornerRadius(30.0)
