@@ -16,8 +16,10 @@
 		3B0183D9260029CB0003CBB6 /* usersData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183D8260029CB0003CBB6 /* usersData.json */; };
 		3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183DC26017F520003CBB6 /* UserModel.swift */; };
 		3B0183E126017FDF0003CBB6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183E026017FDF0003CBB6 /* UserViewModel.swift */; };
-		3BEA42F92602D1BB00194FBE /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 3BEA42F82602D1BB00194FBE /* PartialSheet */; };
+		3B61B9F22607510A008567D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B61B9F12607510A008567D2 /* GoogleService-Info.plist */; };
+		3BEA42F92602D1BB00194FBE /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3BEA42F82602D1BB00194FBE /* SwiftPackageProductDependency */; };
 		3BEA42FC2604197000194FBE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA42FB2604197000194FBE /* ConfigView.swift */; };
+		E6BEA65CAC23AD9194710FDD /* Pods_Canpine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03A19546255646AC7B9BF41 /* Pods_Canpine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +34,11 @@
 		3B0183D8260029CB0003CBB6 /* usersData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usersData.json; sourceTree = "<group>"; };
 		3B0183DC26017F520003CBB6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3B0183E026017FDF0003CBB6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3B61B9F12607510A008567D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BEA42FB2604197000194FBE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		C03A19546255646AC7B9BF41 /* Pods_Canpine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canpine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA71761E1411CE8E111F4A73 /* Pods-Canpine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canpine.debug.xcconfig"; path = "Target Support Files/Pods-Canpine/Pods-Canpine.debug.xcconfig"; sourceTree = "<group>"; };
+		F90810E44D4B32AC325833EA /* Pods-Canpine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canpine.release.xcconfig"; path = "Target Support Files/Pods-Canpine/Pods-Canpine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,18 +46,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BEA42F92602D1BB00194FBE /* PartialSheet in Frameworks */,
+				3BEA42F92602D1BB00194FBE /* BuildFile in Frameworks */,
+				E6BEA65CAC23AD9194710FDD /* Pods_Canpine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27BEB766A4E6D1D2F6CBA7EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C03A19546255646AC7B9BF41 /* Pods_Canpine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3B0183B525FC37C60003CBB6 = {
 			isa = PBXGroup;
 			children = (
 				3B0183C025FC37C60003CBB6 /* Canpine */,
 				3B0183BF25FC37C60003CBB6 /* Products */,
+				F3D8126E328CB8E92A66A163 /* Pods */,
+				27BEB766A4E6D1D2F6CBA7EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +93,7 @@
 				3B0183C725FC37CB0003CBB6 /* Assets.xcassets */,
 				3B0183CC25FC37CB0003CBB6 /* LaunchScreen.storyboard */,
 				3B0183CF25FC37CB0003CBB6 /* Info.plist */,
+				3B61B9F12607510A008567D2 /* GoogleService-Info.plist */,
 				3B0183C925FC37CB0003CBB6 /* Preview Content */,
 			);
 			path = Canpine;
@@ -105,6 +123,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F3D8126E328CB8E92A66A163 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA71761E1411CE8E111F4A73 /* Pods-Canpine.debug.xcconfig */,
+				F90810E44D4B32AC325833EA /* Pods-Canpine.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B0183D225FC37CB0003CBB6 /* Build configuration list for PBXNativeTarget "Canpine" */;
 			buildPhases = (
+				B7F4589938524BD5E4A2771D /* [CP] Check Pods Manifest.lock */,
 				3B0183BA25FC37C60003CBB6 /* Sources */,
 				3B0183BB25FC37C60003CBB6 /* Frameworks */,
 				3B0183BC25FC37C60003CBB6 /* Resources */,
+				25964EAB7EA8DB3F177CE6A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,7 +152,7 @@
 			);
 			name = Canpine;
 			packageProductDependencies = (
-				3BEA42F82602D1BB00194FBE /* PartialSheet */,
+				3BEA42F82602D1BB00194FBE /* SwiftPackageProductDependency */,
 			);
 			productName = Canpine;
 			productReference = 3B0183BE25FC37C60003CBB6 /* Canpine.app */;
@@ -152,7 +182,7 @@
 			);
 			mainGroup = 3B0183B525FC37C60003CBB6;
 			packageReferences = (
-				3BEA42F72602D1BB00194FBE /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				3BEA42F72602D1BB00194FBE /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 3B0183BF25FC37C60003CBB6 /* Products */;
 			projectDirPath = "";
@@ -170,12 +200,55 @@
 			files = (
 				3B0183CE25FC37CB0003CBB6 /* LaunchScreen.storyboard in Resources */,
 				3B0183CB25FC37CB0003CBB6 /* Preview Assets.xcassets in Resources */,
+				3B61B9F22607510A008567D2 /* GoogleService-Info.plist in Resources */,
 				3B0183D9260029CB0003CBB6 /* usersData.json in Resources */,
 				3B0183C825FC37CB0003CBB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25964EAB7EA8DB3F177CE6A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Canpine/Pods-Canpine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Canpine/Pods-Canpine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Canpine/Pods-Canpine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7F4589938524BD5E4A2771D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Canpine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B0183BA25FC37C60003CBB6 /* Sources */ = {
@@ -323,6 +396,7 @@
 		};
 		3B0183D325FC37CB0003CBB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA71761E1411CE8E111F4A73 /* Pods-Canpine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -344,6 +418,7 @@
 		};
 		3B0183D425FC37CB0003CBB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F90810E44D4B32AC325833EA /* Pods-Canpine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -387,7 +462,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3BEA42F72602D1BB00194FBE /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+		3BEA42F72602D1BB00194FBE /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
 			requirement = {
@@ -398,9 +473,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3BEA42F82602D1BB00194FBE /* PartialSheet */ = {
+		3BEA42F82602D1BB00194FBE /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3BEA42F72602D1BB00194FBE /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			package = 3BEA42F72602D1BB00194FBE /* RemoteSwiftPackageReference */;
 			productName = PartialSheet;
 		};
 /* End XCSwiftPackageProductDependency section */

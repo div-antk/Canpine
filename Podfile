@@ -6,6 +6,7 @@ target 'Canpine' do
   use_frameworks!
 
   # Pods for Canpine
-  pod 'PartialSheet'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end

@@ -21,10 +21,15 @@ struct ConfigView: View {
                     .font(.subheadline)
                 TextField(status, text: $status)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("もちもの")
+                Text("もちもの🍺")
                     .font(.subheadline)
                 TextField(item, text: $item)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            VStack {
+                Button(action :{
+                    status = $status
+                })
             }
             .padding()
             .frame(height: 250)

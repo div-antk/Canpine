@@ -7,8 +7,4 @@
 
 import Foundation
 
-//class apiCall {
-//    func getUsers(completion:@escaping ([User])) -> guard {
-//        <#function body#>
-//    }
-//}
+
