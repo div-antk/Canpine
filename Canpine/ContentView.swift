@@ -10,9 +10,12 @@ import PartialSheet
 
 struct ContentView: View {
     
-    @State var isConfirm = false
+    @State var isLogIn = false
+    @State var showSignUp = false
     @State var showPartial = false
         
+    @EnvironmentObject var partialSheetManager: PartialSheetManager
+
     init() {
         UITableView.appearance().backgroundColor = .clear
     }
@@ -26,7 +29,11 @@ struct ContentView: View {
                     VStack(spacing: 24) {
                         ForEach(usersData) { user in
                             Button(action: {
-                                self.isConfirm = true
+                                if isLogIn {
+                                    print("ログイン中の処理")
+                                } else {
+                                    showSignUp.toggle()
+                                }
                             }) {
                                 HStack {
                                     Image(systemName: "person.circle")
@@ -78,6 +85,9 @@ struct ContentView: View {
         .addPartialSheet()
         .partialSheet(isPresented: $showPartial) {
             ConfigView()
+        }
+        .partialSheet(isPresented: $showSignUp) {
+            SignUpView()
         }
     }
 }
