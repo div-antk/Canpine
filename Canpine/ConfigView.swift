@@ -26,11 +26,6 @@ struct ConfigView: View {
                 TextField(item, text: $item)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-//            VStack {
-//                Button(action :{
-//                    status = $status
-//                })
-//            }
             .padding()
             .frame(height: 250)
         }
