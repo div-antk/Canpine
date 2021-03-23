@@ -13,6 +13,9 @@ struct InitialView: View {
     @State var email = ""
     @State var password = ""
     
+    @State var errorMessage = ""
+    @State var isError = false
+    
     var body: some View {
         ZStack {
             Color.yellow
@@ -42,7 +45,17 @@ struct InitialView: View {
                         .padding(.horizontal, 60)
                 }.padding(.bottom, 20)
                 VStack {
+                    Text(errorMessage)
                     Button("👍") {
+                        if email.isEmpty {
+                            errorMessage = "メールアドレスを入力してください"
+                            isError = true
+                        } else if password.isEmpty {
+                            errorMessage = "ただしいパスワードを入力してください"
+                            isError = true
+                        } else {
+                            print("サインアップ")
+                        }
                         print(name, email, password)
                     }.frame(width: 60, height: 60)
                     .background(Color.white)
@@ -52,6 +65,7 @@ struct InitialView: View {
         }
     }
 }
+
 
 struct InitialView_Previews: PreviewProvider {
     static var previews: some View {
