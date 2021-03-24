@@ -18,7 +18,7 @@ struct SignUpView: View {
     
     var body: some View {
         ZStack {
-            Color.yellow
+            Color.orange
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
