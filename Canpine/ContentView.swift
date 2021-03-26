@@ -79,12 +79,12 @@ struct ContentView: View {
             }
         }
         .addPartialSheet(style: PartialSheetStyle(
-            background: .solid(Color.clear),
+            background: .solid(Color.white),
             handlerBarColor: Color.white,
             enableCover: true, // 背景タップの許可
             coverColor: Color.black.opacity(0.4), // 背景
             cornerRadius: 4,
-            minTopDistance: 100 // 上部から最低どれくらい空けるか
+            minTopDistance: 0 // 上部から最低どれくらい空けるか
         ))
         .partialSheet(isPresented: $showPartial) {
             ConfigView(isStandby: $isStandby)
@@ -92,11 +92,6 @@ struct ContentView: View {
         .partialSheet(isPresented: $showSignUp) {
             SignUpView()
         }
-//        .navigationBarItems(trailing: Button(action: {
-//            showPartial.toggle()
-//        }) {
-//            Image(systemName: "gearshape.fill")
-//        })
     }
 }
 

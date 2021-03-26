@@ -13,7 +13,8 @@ struct SignUpView: View {
     @State var email = ""
     @State var password = ""
     
-    @State var errorMessage = ""
+    @State var mailErrorMessage = ""
+    @State var passWordErrorMessage = ""
     @State var isError = false
     
     var body: some View {
@@ -32,30 +33,61 @@ struct SignUpView: View {
                         .font(.subheadline)
                         .foregroundColor(.black)
                 }.padding(.bottom, 20)
-                VStack(spacing: 20) {
-                    TextField("あなたの名前", text: $name)
+                VStack(spacing: 8) {
+                    VStack(alignment: .leading, spacing: 4) {
+                    Text("ニックネーム")
+                        .font(.caption)
+                        .padding(.horizontal, 30)
+                    TextField("Beautiful Name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 60)
-                    TextField("email", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 60)
-                        .keyboardType(.emailAddress)
-                    SecureField("password", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 60)
+                        .padding(.horizontal, 30)
+                    }
+                    VStack(alignment: .leading, spacing: 4) {
+                        if mailErrorMessage != "" {
+                            Text(mailErrorMessage)
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 30)
+                        } else {
+                            Text("メールアドレス")
+                                .font(.caption)
+                                .padding(.horizontal, 30)
+                        }
+                        TextField("email", text: $email)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal, 30)
+                            .keyboardType(.emailAddress)
+                    }
+                    VStack(alignment: .leading, spacing: 4) {
+                        if passWordErrorMessage != "" {
+                            Text(passWordErrorMessage)
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 30)
+                        } else {
+                            Text("パスワード")
+                                .font(.caption)
+                                .padding(.horizontal, 30)
+                        }
+                        SecureField("password", text: $password)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal, 30)
+                    }
                 }.padding(.bottom, 20)
+                
                 VStack {
-                    Text(errorMessage)
                     Button("👍") {
                         if email.isEmpty {
-                            errorMessage = "メールアドレスを入力してください"
+                            mailErrorMessage = "メールアドレスを入力してください"
                             isError = true
-                        } else if password.isEmpty {
-                            errorMessage = "ただしいパスワードを入力してください"
-                            isError = true
-                        } else {
-                            print("サインアップ")
                         }
+                        if password.isEmpty {
+                            passWordErrorMessage = "ただしいパスワードを入力してください"
+                            isError = true
+                        }
+                        print("サインアップ")
                         print(name, email, password)
                     }.frame(width: 60, height: 60)
                     .background(Color.white)
