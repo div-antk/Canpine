@@ -13,10 +13,14 @@ struct ConfigView: View {
     @EnvironmentObject var partialSheetManager: PartialSheetManager
     @State var status = "飲みたい"
     @State var item = "ビール"
+    @Binding var isStandby: Bool
     
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
+                Toggle(isOn: $isStandby, label: {
+                    Text(isStandby ? "カンパイ待ち" : "OFF")
+                })
                 Text("ステータス")
                     .font(.subheadline)
                 TextField(status, text: $status)
@@ -33,7 +37,10 @@ struct ConfigView: View {
 }
 
 struct ConfigView_Previews: PreviewProvider {
+    
+    @Binding var isStandby: Bool
+
     static var previews: some View {
-        ConfigView()
+        ConfigView(isStandby: .constant(false))
     }
 }

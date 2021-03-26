@@ -10,6 +10,7 @@ import PartialSheet
 
 struct ContentView: View {
     
+    @State var isStandby = false
     @State var isLogIn = false
     @State var showSignUp = false
     @State var showPartial = false
@@ -79,7 +80,7 @@ struct ContentView: View {
         }
         .addPartialSheet()
         .partialSheet(isPresented: $showPartial) {
-            ConfigView()
+            ConfigView(isStandby: $isStandby)
         }
         .partialSheet(isPresented: $showSignUp) {
             SignUpView()
@@ -104,10 +105,11 @@ struct ConfigButton: View {
                 Button(action: {
                     showPartial.toggle()
                 }) {
+                    
                     Image(systemName: "gearshape.fill")
                         .foregroundColor(.white)
                         .frame(width: 60, height: 60)
-                        .background(Color.orange)
+                        .background(Color.gray)
                         .cornerRadius(30.0)
                         .shadow(color: .gray, radius: 3, x: 3, y: 3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
