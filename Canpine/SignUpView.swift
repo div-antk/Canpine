@@ -26,9 +26,6 @@ struct SignUpView: View {
                 }
             VStack {
                 VStack {
-                    Text("ようこそCanpineへ！")
-                        .font(.headline)
-                        .foregroundColor(.black)
                     Text("カンパイしましょう🍻")
                         .font(.subheadline)
                         .foregroundColor(.black)
@@ -38,7 +35,7 @@ struct SignUpView: View {
                     Text("ニックネーム")
                         .font(.caption)
                         .padding(.horizontal, 30)
-                    TextField("Beautiful Name", text: $name)
+                    TextField("Your Beautiful Name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 30)
                     }
@@ -58,6 +55,7 @@ struct SignUpView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal, 30)
                             .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
                     }
                     VStack(alignment: .leading, spacing: 4) {
                         if passWordErrorMessage != "" {
