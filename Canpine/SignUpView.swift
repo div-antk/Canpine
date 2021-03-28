@@ -16,7 +16,7 @@ struct SignUpView: View {
     @State var mailErrorMessage = ""
     @State var passWordErrorMessage = ""
     @State var isError = false
-    
+        
     var body: some View {
         ZStack {
             Color.orange
