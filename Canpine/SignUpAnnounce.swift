@@ -14,8 +14,8 @@ struct SignUpAnnounce: View {
     var body: some View {
         VStack{
             Text("Canpineにジョインしてカンパイしましょう🍻")
-                .font(.system(size: 12))
-
+                .font(.system(size: 14))
+                .padding(.bottom, 24)
             Button(action: {
                 isShowing = true
             }) {
@@ -23,10 +23,11 @@ struct SignUpAnnounce: View {
                     .fontWeight(.bold)
                     .font(.system(size: 12))
                     .foregroundColor(Color.white)
-                    .background(Color.blue)
-                    .frame(height: 48)
-
-                    .padding(.horizontal, 32)
+                    .frame(maxWidth: .infinity, minHeight: 28)
+                    .background(Color.orange)
+                    .cornerRadius(4)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 12)
                     .sheet(isPresented: $isShowing) {
                         SignUpView()
                     }
@@ -42,14 +43,16 @@ struct SignUpAnnounce: View {
 //                SignUpView()
 //            }
             ZStack {
+                Rectangle()
+                    .fill(Color.black)
+                    .frame(height: 1)
+                    .padding(.horizontal, 16)
             Text("or")
                 .fontWeight(.bold)
                 .font(.system(size: 12))
+                .frame(width: 24)
                 .background(Color.white)
-            Rectangle()
-                .fill(Color.black)
-                .frame(height: 1)
-                .padding(.horizontal, 16)
+
             }
         }
     }
