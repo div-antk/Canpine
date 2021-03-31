@@ -26,14 +26,18 @@ struct SignUpView: View {
                 }
             VStack {
                 VStack {
-                    Text("カンパイしましょう🍻")
-                        .font(.subheadline)
-                        .foregroundColor(.black)
-                }.padding(.bottom, 20)
+                    HStack {
+                        Spacer()
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.white)
+                    }.padding(.bottom, 20)
+                    .padding(.horizontal, 30)
+                }
                 VStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
                     Text("ニックネーム")
                         .font(.caption)
+                        .fontWeight(.bold)
                         .padding(.horizontal, 30)
                     TextField("Your Beautiful Name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -49,6 +53,7 @@ struct SignUpView: View {
                         } else {
                             Text("メールアドレス")
                                 .font(.caption)
+                                .fontWeight(.bold)
                                 .padding(.horizontal, 30)
                         }
                         TextField("email", text: $email)
@@ -67,6 +72,7 @@ struct SignUpView: View {
                         } else {
                             Text("パスワード")
                                 .font(.caption)
+                                .fontWeight(.bold)
                                 .padding(.horizontal, 30)
                         }
                         SecureField("password", text: $password)
