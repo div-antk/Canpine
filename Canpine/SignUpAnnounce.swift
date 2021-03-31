@@ -13,46 +13,44 @@ struct SignUpAnnounce: View {
     
     var body: some View {
         VStack{
-            Text("Canpineにジョインしてカンパイしましょう🍻")
-                .font(.system(size: 14))
-                .padding(.bottom, 24)
+            Text("Canpineに登録して\nカンパイしましょう🍻")
+                .font(.system(size: 16, weight: .bold))
+                .padding(.bottom, 16)
             Button(action: {
                 isShowing = true
             }) {
+                
                 Text("登録する")
-                    .fontWeight(.bold)
-                    .font(.system(size: 12))
+                    .font(.system(size: 12, weight: .bold))
                     .foregroundColor(Color.white)
                     .frame(maxWidth: .infinity, minHeight: 28)
                     .background(Color.orange)
                     .cornerRadius(4)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 32)
                     .padding(.bottom, 12)
                     .sheet(isPresented: $isShowing) {
                         SignUpView()
                     }
             }
-//            Button("登録する") {
-//                isShowing = true
-//            }.foregroundColor(Color.white)
-//            .accentColor(Color.white)
-//            .background(Color.orange)
-//            .frame(height: 24)
-//            .padding(.horizontal, 16)
-//            .sheet(isPresented: $isShowing) {
-//                SignUpView()
-//            }
             ZStack {
                 Rectangle()
                     .fill(Color.black)
                     .frame(height: 1)
-                    .padding(.horizontal, 16)
-            Text("or")
-                .fontWeight(.bold)
-                .font(.system(size: 12))
-                .frame(width: 24)
-                .background(Color.white)
-
+                    .padding(.horizontal, 32)
+                Text("or")
+                    .font(.system(size: 12, weight: .bold))
+                    .frame(width: 24)
+                    .background(Color.white)
+            }
+            .padding(.bottom, 12)
+            Button(action: {
+                isShowing = true
+            }) {
+                Image(systemName: "gearshape.fill")
+                    .foregroundColor(.white)
+                    .frame(width: 40, height: 40)
+                    .background(Color.gray)
+                    .cornerRadius(20.0)
             }
         }
     }
