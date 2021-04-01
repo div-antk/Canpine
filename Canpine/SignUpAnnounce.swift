@@ -19,7 +19,6 @@ struct SignUpAnnounce: View {
             Button(action: {
                 isShowing = true
             }) {
-                
                 Text("登録する")
                     .font(.system(size: 12, weight: .bold))
                     .foregroundColor(Color.white)
@@ -28,7 +27,7 @@ struct SignUpAnnounce: View {
                     .cornerRadius(4)
                     .padding(.horizontal, 32)
                     .padding(.bottom, 12)
-                    .sheet(isPresented: $isShowing) {
+                    .fullScreenCover(isPresented: $isShowing) {
                         SignUpView()
                     }
             }

@@ -36,6 +36,7 @@ struct SignUpView: View {
                 VStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
                     Text("ニックネーム")
+                        .foregroundColor(.black)
                         .font(.caption)
                         .fontWeight(.bold)
                         .padding(.horizontal, 30)
@@ -52,6 +53,7 @@ struct SignUpView: View {
                                 .padding(.horizontal, 30)
                         } else {
                             Text("メールアドレス")
+                                .foregroundColor(.black)
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .padding(.horizontal, 30)
@@ -71,6 +73,7 @@ struct SignUpView: View {
                                 .padding(.horizontal, 30)
                         } else {
                             Text("パスワード")
+                                .foregroundColor(.black)
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .padding(.horizontal, 30)
@@ -97,6 +100,7 @@ struct SignUpView: View {
                     .background(Color.white)
                     .cornerRadius(30.0)
                 }
+                Spacer()
             }
         }
     }
