@@ -28,7 +28,7 @@ struct SignUpAnnounce: View {
                     .padding(.horizontal, 32)
                     .padding(.bottom, 12)
                     .fullScreenCover(isPresented: $isShowing) {
-                        SignUpView()
+                        SignUpView(isActive: $isShowing)
                     }
             }
             ZStack {

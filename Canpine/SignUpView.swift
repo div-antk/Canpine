@@ -16,6 +16,8 @@ struct SignUpView: View {
     @State var mailErrorMessage = ""
     @State var passWordErrorMessage = ""
     @State var isError = false
+    
+    @Binding var isActive: Bool
         
     var body: some View {
         ZStack {
@@ -28,10 +30,16 @@ struct SignUpView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.white)
-                    }.padding(.bottom, 20)
-                    .padding(.horizontal, 30)
+                        Button(action: {
+                            isActive = false
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.white)
+//                                .frame(width: 20)
+                        }
+                    }.padding(EdgeInsets(
+                    top: 80, leading: 0, bottom: 40, trailing: 32
+                    ))
                 }
                 VStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
@@ -39,10 +47,10 @@ struct SignUpView: View {
                         .foregroundColor(.black)
                         .font(.caption)
                         .fontWeight(.bold)
-                        .padding(.horizontal, 30)
+                        .padding(.horizontal, 32)
                     TextField("Your Beautiful Name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 30)
+                        .padding(.horizontal, 32)
                     }
                     VStack(alignment: .leading, spacing: 4) {
                         if mailErrorMessage != "" {
@@ -50,17 +58,17 @@ struct SignUpView: View {
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 30)
+                                .padding(.horizontal, 32)
                         } else {
                             Text("メールアドレス")
                                 .foregroundColor(.black)
                                 .font(.caption)
                                 .fontWeight(.bold)
-                                .padding(.horizontal, 30)
+                                .padding(.horizontal, 32)
                         }
                         TextField("email", text: $email)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal, 32)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                     }
@@ -70,19 +78,19 @@ struct SignUpView: View {
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 30)
+                                .padding(.horizontal, 32)
                         } else {
                             Text("パスワード")
                                 .foregroundColor(.black)
                                 .font(.caption)
                                 .fontWeight(.bold)
-                                .padding(.horizontal, 30)
+                                .padding(.horizontal, 32)
                         }
                         SecureField("password", text: $password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal, 32)
                     }
-                }.padding(.bottom, 20)
+                }.padding(.bottom, 40)
                 
                 VStack {
                     Button("👍") {
@@ -108,6 +116,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(isActive: .constant(false))
     }
 }
