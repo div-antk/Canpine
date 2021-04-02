@@ -60,7 +60,7 @@ struct ContentView: View {
                                         .foregroundColor(.black)
                                         .padding(.top, 2)
                                     Text(user.item)
-                                        .font(.system(size: 24, weight: .bold))
+                                        .font(.system(size: 20, weight: .bold))
                                         .foregroundColor(.black)
                                         .padding(.top, 2)
                                 }
@@ -125,7 +125,7 @@ struct ConfigButton: View {
 struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .cornerRadius(20)
+            .cornerRadius(8)
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
     }
 }
