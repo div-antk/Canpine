@@ -18,7 +18,7 @@ struct SignUpView: View {
     @State var isError = false
     
     @Binding var isActive: Bool
-        
+    
     var body: some View {
         ZStack {
             Color.orange
@@ -35,22 +35,22 @@ struct SignUpView: View {
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.white)
-//                                .frame(width: 20)
+                            //                                .frame(width: 20)
                         }
                     }.padding(EdgeInsets(
-                    top: 80, leading: 0, bottom: 40, trailing: 32
+                        top: 80, leading: 0, bottom: 40, trailing: 32
                     ))
                 }
                 VStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
-                    Text("ニックネーム")
-                        .foregroundColor(.black)
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .padding(.horizontal, 32)
-                    TextField("Your Beautiful Name", text: $name)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 32)
+                        Text("ニックネーム")
+                            .foregroundColor(.black)
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 32)
+                        TextField("Your Beautiful Name", text: $name)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal, 32)
                     }
                     VStack(alignment: .leading, spacing: 4) {
                         if mailErrorMessage != "" {
@@ -92,8 +92,11 @@ struct SignUpView: View {
                     }
                 }.padding(.bottom, 40)
                 
+                
+                
                 VStack {
-                    Button("👍") {
+                    
+                    Button(action: {
                         if email.isEmpty {
                             mailErrorMessage = "メールアドレスを入力してください"
                             isError = true
@@ -104,9 +107,14 @@ struct SignUpView: View {
                         }
                         print("サインアップ")
                         print(name, email, password)
-                    }.frame(width: 60, height: 60)
-                    .background(Color.white)
-                    .cornerRadius(30.0)
+                        
+                    }) {
+                        Text("👍")
+                            .foregroundColor(.white)
+                            .frame(width: 60, height: 60)
+                            .background(Color.white)
+                            .cornerRadius(30.0)
+                    }
                 }
                 Spacer()
             }
