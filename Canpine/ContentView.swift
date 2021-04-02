@@ -56,7 +56,7 @@ struct ContentView: View {
                                         .foregroundColor(.gray)
                                         .padding(.top, 1)
                                     Text("\(user.status)です")
-                                        .font(.system(size: 16))
+                                        .font(.system(size: 14))
                                         .foregroundColor(.black)
                                         .padding(.top, 2)
                                     Text(user.item)

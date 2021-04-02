@@ -16,22 +16,43 @@ struct ConfigView: View {
     @Binding var isStandby: Bool
     
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Toggle(isOn: $isStandby, label: {
-                    Text(isStandby ? "カンパイ待ち" : "OFF")
-                })
-                Text("ステータス")
-                    .font(.subheadline)
-                TextField(status, text: $status)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("もちもの🍺")
-                    .font(.subheadline)
-                TextField(item, text: $item)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+        ZStack {
+//            Color.orange
+//                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading, spacing: 8) {
+                ZStack {
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.1))
+                        .frame(height: 42)
+                        .cornerRadius(4)
+                        .padding(.horizontal, 32)
+                    Toggle(isOn: $isStandby, label: {
+                        Text(isStandby ? "カンパイ待ち" : "OFF")
+                            .font(.system(size: 14, weight: .bold))
+//                            .padding(.horizontal, 32)
+                    })
+                    .padding(.horizontal, 42)
+                }.padding(.bottom, 8)
+                VStack(alignment: .leading, spacing: 4) {
+                    // TODO: 状態名を考える
+                    Text("どんなきぶん？")
+                        .font(.system(size: 12, weight: .bold))
+                        .padding(.horizontal, 32)
+                    TextField(status, text: $status)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal, 32)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("飲みもの🍺")
+                        .font(.system(size: 12, weight: .bold))
+                        .padding(.horizontal, 32)
+                    TextField(item, text: $item)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal, 32)
+                }
+                
             }
-            .padding()
-            .frame(height: 250)
+            .frame(height: 240)
         }
     }
 }
@@ -39,7 +60,7 @@ struct ConfigView: View {
 struct ConfigView_Previews: PreviewProvider {
     
     @Binding var isStandby: Bool
-
+    
     static var previews: some View {
         ConfigView(isStandby: .constant(false))
     }
