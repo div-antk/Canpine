@@ -34,11 +34,13 @@ struct SignUpView: View {
                             isActive = false
                         }) {
                             Image(systemName: "xmark.circle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 28, height: 28)
                                 .foregroundColor(.white)
-                            //                                .frame(width: 20)
                         }
                     }.padding(EdgeInsets(
-                        top: 80, leading: 0, bottom: 40, trailing: 32
+                        top: 60, leading: 0, bottom: 40, trailing: 32
                     ))
                 }
                 VStack(spacing: 8) {
@@ -91,9 +93,7 @@ struct SignUpView: View {
                             .padding(.horizontal, 32)
                     }
                 }.padding(.bottom, 40)
-                
-                
-                
+
                 VStack {
                     
                     Button(action: {
