@@ -77,6 +77,11 @@ struct ContentView: View {
             VStack {
                 ConfigButton(showPartial: $showPartial)
             }
+            Rectangle()
+                .fill(Color.gray)
+                .frame(height: 400)
+                .cornerRadius(4)
+                .padding(.horizontal, 32)
         }
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.white),
