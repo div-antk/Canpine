@@ -45,11 +45,10 @@ struct SignUpAnnounce: View {
             Button(action: {
                 isShowing = true
             }) {
-                Image(systemName: "gearshape.fill")
-                    .foregroundColor(.white)
+                Image("twitter_circle")
+                    .resizable()
                     .frame(width: 40, height: 40)
-                    .background(Color.gray)
-                    .cornerRadius(20.0)
+                    .padding(.bottom, 20)
             }
         }
     }

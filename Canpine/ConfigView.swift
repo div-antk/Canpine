@@ -20,6 +20,9 @@ struct ConfigView: View {
 //            Color.orange
 //                .edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading, spacing: 8) {
+                Text("カンパイを受ける")
+                    .font(.system(size: 12, weight: .bold))
+                    .padding(.horizontal, 32)
                 ZStack {
                     Rectangle()
                         .fill(Color.gray.opacity(0.1))
@@ -27,7 +30,7 @@ struct ConfigView: View {
                         .cornerRadius(4)
                         .padding(.horizontal, 32)
                     Toggle(isOn: $isStandby, label: {
-                        Text(isStandby ? "カンパイ待ち" : "OFF")
+                        Text(isStandby ? "はい" : "いいえ")
                             .font(.system(size: 14, weight: .bold))
 //                            .padding(.horizontal, 32)
                     })
