@@ -7,18 +7,18 @@
 
 import Foundation
 import SwiftUI
+import ExytePopupView
 
 struct CheerPopUpView: View {
     
     @Binding var isPopUp: Bool
     
     var body: some View {
-        ZStack {
-            Text("ショボーン")
+        HStack {
+            Text("opup")
         }
-        .frame(width:300, height: 300)
-        .background(Color.white)
-        .mask(RoundedRectangle(cornerRadius: 20))
-        .shadow(radius: 20)
+        .frame(width: 200, height: 60)
+        .background(Color(red: 0.85, green: 0.8, blue: 0.95))
+        .cornerRadius(30.0)
     }
 }
