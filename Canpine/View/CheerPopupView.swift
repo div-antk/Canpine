@@ -14,11 +14,14 @@ struct CheerPopupView: View {
     @Binding var isActiveCheerPopup: Bool
     
     var body: some View {
-        HStack {
+        ZStack {
+            
+            
             Text("opup")
         }
-        .frame(width: 200, height: 60)
+        .frame(maxWidth: .infinity, minHeight: 200)
         .background(Color(red: 0.85, green: 0.8, blue: 0.95))
-        .cornerRadius(30.0)
+        .cornerRadius(12)
+        .padding(.horizontal, 32)
     }
 }

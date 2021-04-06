@@ -13,7 +13,7 @@ struct MainView: View {
     // 遷移する際の変数は showHoge
     // モーダルを閉じるための変数は activeHoge
     @State var isStandby = false // カンパイ待ちかどうか
-    @State var isLogIn = false
+    @State var isLogIn = true
     @State var showSignUp = false
     @State var showCheerPopup = false
     @State var showConfig = false
@@ -84,7 +84,11 @@ struct MainView: View {
                 ConfigButton(showPartial: $showConfig)
             }
         }
-        .popup(isPresented: $showCheerPopup, autohideIn: nil) {
+        .popup(
+            isPresented: $showCheerPopup,
+            autohideIn: nil,
+            closeOnTap: false
+        ) {
             CheerPopupView(isActiveCheerPopup: $showCheerPopup)
 
         }
