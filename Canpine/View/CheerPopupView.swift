@@ -1,5 +1,5 @@
 //
-//  CheerPopUpView.swift
+//  CheerPopupView.swift
 //  Canpine
 //
 //  Created by Takuya Ando on 2021/04/06.
@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 import ExytePopupView
 
-struct CheerPopUpView: View {
+struct CheerPopupView: View {
     
-    @Binding var isPopUp: Bool
+    @Binding var isActiveCheerPopup: Bool
     
     var body: some View {
         HStack {

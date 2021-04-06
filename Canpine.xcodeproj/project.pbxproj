@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B0183C225FC37C60003CBB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183C125FC37C60003CBB6 /* AppDelegate.swift */; };
 		3B0183C425FC37C60003CBB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183C325FC37C60003CBB6 /* SceneDelegate.swift */; };
-		3B0183C625FC37C60003CBB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183C525FC37C60003CBB6 /* ContentView.swift */; };
+		3B0183C625FC37C60003CBB6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183C525FC37C60003CBB6 /* MainView.swift */; };
 		3B0183C825FC37CB0003CBB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183C725FC37CB0003CBB6 /* Assets.xcassets */; };
 		3B0183CB25FC37CB0003CBB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183CA25FC37CB0003CBB6 /* Preview Assets.xcassets */; };
 		3B0183CE25FC37CB0003CBB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183CC25FC37CB0003CBB6 /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		3BEA42F92602D1BB00194FBE /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 3BEA42F82602D1BB00194FBE /* PartialSheet */; };
 		3BEA42FC2604197000194FBE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA42FB2604197000194FBE /* ConfigView.swift */; };
 		3BF8415A260757BD0092A659 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF84159260757BD0092A659 /* InitialView.swift */; };
-		3BFB4802261C7CBB00805564 /* CheerPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB4801261C7CBB00805564 /* CheerPopUpView.swift */; };
+		3BFB4802261C7CBB00805564 /* CheerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB4801261C7CBB00805564 /* CheerPopupView.swift */; };
 		E6BEA65CAC23AD9194710FDD /* Pods_Canpine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03A19546255646AC7B9BF41 /* Pods_Canpine.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		3B0183BE25FC37C60003CBB6 /* Canpine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Canpine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0183C125FC37C60003CBB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B0183C325FC37C60003CBB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B0183C525FC37C60003CBB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B0183C525FC37C60003CBB6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3B0183C725FC37CB0003CBB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B0183CA25FC37CB0003CBB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B0183CD25FC37CB0003CBB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		3B61B9F12607510A008567D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BEA42FB2604197000194FBE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		3BF84159260757BD0092A659 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
-		3BFB4801261C7CBB00805564 /* CheerPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerPopUpView.swift; sourceTree = "<group>"; };
+		3BFB4801261C7CBB00805564 /* CheerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerPopupView.swift; sourceTree = "<group>"; };
 		C03A19546255646AC7B9BF41 /* Pods_Canpine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canpine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA71761E1411CE8E111F4A73 /* Pods-Canpine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canpine.debug.xcconfig"; path = "Target Support Files/Pods-Canpine/Pods-Canpine.debug.xcconfig"; sourceTree = "<group>"; };
 		F90810E44D4B32AC325833EA /* Pods-Canpine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canpine.release.xcconfig"; path = "Target Support Files/Pods-Canpine/Pods-Canpine.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,11 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				3BF84159260757BD0092A659 /* InitialView.swift */,
-				3B0183C525FC37C60003CBB6 /* ContentView.swift */,
+				3B0183C525FC37C60003CBB6 /* MainView.swift */,
 				3B45CDCF260AA2850015371C /* SignUpView.swift */,
 				3B10D0A92610B4820069A317 /* SignUpAnnounceView.swift */,
 				3BEA42FB2604197000194FBE /* ConfigView.swift */,
-				3BFB4801261C7CBB00805564 /* CheerPopUpView.swift */,
+				3BFB4801261C7CBB00805564 /* CheerPopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,12 +278,12 @@
 				3B0183C225FC37C60003CBB6 /* AppDelegate.swift in Sources */,
 				3B0183C425FC37C60003CBB6 /* SceneDelegate.swift in Sources */,
 				3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */,
-				3BFB4802261C7CBB00805564 /* CheerPopUpView.swift in Sources */,
+				3BFB4802261C7CBB00805564 /* CheerPopupView.swift in Sources */,
 				3B45CDD0260AA2850015371C /* SignUpView.swift in Sources */,
 				3B0183E126017FDF0003CBB6 /* UserViewModel.swift in Sources */,
 				3BF8415A260757BD0092A659 /* InitialView.swift in Sources */,
 				3B10D0AA2610B4820069A317 /* SignUpAnnounceView.swift in Sources */,
-				3B0183C625FC37C60003CBB6 /* ContentView.swift in Sources */,
+				3B0183C625FC37C60003CBB6 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

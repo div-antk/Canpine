@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpAnnounceView: View {
     
-    @State private var isShowSignUpAnnounce = false
+    @State private var isActiveSignUpAnnounce = false
     
     var body: some View {
         VStack{
@@ -17,7 +17,7 @@ struct SignUpAnnounceView: View {
                 .font(.system(size: 16, weight: .bold))
                 .padding(.bottom, 16)
             Button(action: {
-                isShowSignUpAnnounce = true
+                isActiveSignUpAnnounce = true
             }) {
                 Text("登録する")
                     .font(.system(size: 12, weight: .bold))
@@ -27,8 +27,8 @@ struct SignUpAnnounceView: View {
                     .cornerRadius(4)
                     .padding(.horizontal, 32)
                     .padding(.bottom, 12)
-                    .fullScreenCover(isPresented: $isShowSignUpAnnounce) {
-                        SignUpView(isShowSignUp: $isShowSignUpAnnounce)
+                    .fullScreenCover(isPresented: $isActiveSignUpAnnounce) {
+                        SignUpView(isActiveSignUp: $isActiveSignUpAnnounce)
                     }
             }
             ZStack {
@@ -43,7 +43,7 @@ struct SignUpAnnounceView: View {
             }
             .padding(.bottom, 12)
             Button(action: {
-                isShowSignUpAnnounce = true
+                isActiveSignUpAnnounce = true
             }) {
                 Image("twitter_circle")
                     .resizable()

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  Canpine
 //
 //  Created by Takuya Ando on 2021/03/13.
@@ -8,13 +8,15 @@
 import SwiftUI
 import PartialSheet
 
-struct ContentView: View {
+struct MainView: View {
     
-    @State var isStandby = false
-    @State var isLogIn = true
+    // 遷移する際の変数は showHoge
+    // モーダルを閉じるための変数は activeHoge
+    @State var isStandby = false // カンパイ待ちかどうか
+    @State var isLogIn = false
     @State var showSignUp = false
-    @State var showCheerPopUp = false
-    @State var showPartial = false
+    @State var showCheerPopup = false
+    @State var showConfig = false
     
     @EnvironmentObject var partialSheetManager: PartialSheetManager
     
@@ -33,7 +35,7 @@ struct ContentView: View {
                             if isLogIn {
                                 print("ログイン中の処理")
                                 withAnimation {
-                                    showCheerPopUp.toggle()
+                                    showCheerPopup.toggle()
                                 }
                             } else {
                                 showSignUp.toggle()
@@ -79,11 +81,11 @@ struct ContentView: View {
                 }
             }
             VStack {
-                ConfigButton(showPartial: $showPartial)
+                ConfigButton(showPartial: $showConfig)
             }
         }
-        .popup(isPresented: $showCheerPopUp, autohideIn: nil) {
-            CheerPopUpView(isPopUp: $showCheerPopUp)
+        .popup(isPresented: $showCheerPopup, autohideIn: nil) {
+            CheerPopupView(isActiveCheerPopup: $showCheerPopup)
 
         }
         .addPartialSheet(style: PartialSheetStyle(
@@ -94,7 +96,7 @@ struct ContentView: View {
             cornerRadius: 4,
             minTopDistance: 0 // 上部から最低どれくらい空けるか
         ))
-        .partialSheet(isPresented: $showPartial) {
+        .partialSheet(isPresented: $showConfig) {
             ConfigView(isStandby: $isStandby)
         }
         .partialSheet(isPresented: $showSignUp) {
@@ -139,6 +141,6 @@ struct CardModifier: ViewModifier {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
