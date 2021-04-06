@@ -84,12 +84,7 @@ struct ContentView: View {
         }
         .popup(isPresented: $showCheerPopUp, autohideIn: nil) {
             CheerPopUpView(isPopUp: $showCheerPopUp)
-//            HStack {
-//                Text("opup")
-//            }
-//            .frame(width: 200, height: 60)
-//            .background(Color(red: 0.85, green: 0.8, blue: 0.95))
-//            .cornerRadius(30.0)
+
         }
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.white),
@@ -103,7 +98,7 @@ struct ContentView: View {
             ConfigView(isStandby: $isStandby)
         }
         .partialSheet(isPresented: $showSignUp) {
-            SignUpAnnounce()
+            SignUpAnnounceView()
         }
     }
 }

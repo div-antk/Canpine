@@ -16,7 +16,7 @@
 		3B0183D9260029CB0003CBB6 /* usersData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B0183D8260029CB0003CBB6 /* usersData.json */; };
 		3B0183DD26017F530003CBB6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183DC26017F520003CBB6 /* UserModel.swift */; };
 		3B0183E126017FDF0003CBB6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0183E026017FDF0003CBB6 /* UserViewModel.swift */; };
-		3B10D0AA2610B4820069A317 /* SignUpAnnounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10D0A92610B4820069A317 /* SignUpAnnounce.swift */; };
+		3B10D0AA2610B4820069A317 /* SignUpAnnounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10D0A92610B4820069A317 /* SignUpAnnounceView.swift */; };
 		3B45CDD0260AA2850015371C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45CDCF260AA2850015371C /* SignUpView.swift */; };
 		3B61B9F22607510A008567D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B61B9F12607510A008567D2 /* GoogleService-Info.plist */; };
 		3BEA42F92602D1BB00194FBE /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 3BEA42F82602D1BB00194FBE /* PartialSheet */; };
@@ -38,7 +38,7 @@
 		3B0183D8260029CB0003CBB6 /* usersData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usersData.json; sourceTree = "<group>"; };
 		3B0183DC26017F520003CBB6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3B0183E026017FDF0003CBB6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		3B10D0A92610B4820069A317 /* SignUpAnnounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAnnounce.swift; sourceTree = "<group>"; };
+		3B10D0A92610B4820069A317 /* SignUpAnnounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAnnounceView.swift; sourceTree = "<group>"; };
 		3B45CDCF260AA2850015371C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		3B61B9F12607510A008567D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BEA42FB2604197000194FBE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -96,12 +96,7 @@
 				3B0183D8260029CB0003CBB6 /* usersData.json */,
 				3B0183DF26017FCC0003CBB6 /* Model */,
 				3B0183E426017FE60003CBB6 /* ViewModel */,
-				3BF84159260757BD0092A659 /* InitialView.swift */,
-				3B0183C525FC37C60003CBB6 /* ContentView.swift */,
-				3B45CDCF260AA2850015371C /* SignUpView.swift */,
-				3B10D0A92610B4820069A317 /* SignUpAnnounce.swift */,
-				3BEA42FB2604197000194FBE /* ConfigView.swift */,
-				3BFB4801261C7CBB00805564 /* CheerPopUpView.swift */,
+				3BFB4819261D1D4F00805564 /* View */,
 				3B0183C725FC37CB0003CBB6 /* Assets.xcassets */,
 				3B0183CC25FC37CB0003CBB6 /* LaunchScreen.storyboard */,
 				3B0183CF25FC37CB0003CBB6 /* Info.plist */,
@@ -133,6 +128,19 @@
 				3B0183E026017FDF0003CBB6 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3BFB4819261D1D4F00805564 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BF84159260757BD0092A659 /* InitialView.swift */,
+				3B0183C525FC37C60003CBB6 /* ContentView.swift */,
+				3B45CDCF260AA2850015371C /* SignUpView.swift */,
+				3B10D0A92610B4820069A317 /* SignUpAnnounceView.swift */,
+				3BEA42FB2604197000194FBE /* ConfigView.swift */,
+				3BFB4801261C7CBB00805564 /* CheerPopUpView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F3D8126E328CB8E92A66A163 /* Pods */ = {
@@ -274,7 +282,7 @@
 				3B45CDD0260AA2850015371C /* SignUpView.swift in Sources */,
 				3B0183E126017FDF0003CBB6 /* UserViewModel.swift in Sources */,
 				3BF8415A260757BD0092A659 /* InitialView.swift in Sources */,
-				3B10D0AA2610B4820069A317 /* SignUpAnnounce.swift in Sources */,
+				3B10D0AA2610B4820069A317 /* SignUpAnnounceView.swift in Sources */,
 				3B0183C625FC37C60003CBB6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
