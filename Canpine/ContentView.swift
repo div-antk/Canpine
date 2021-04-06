@@ -11,8 +11,9 @@ import PartialSheet
 struct ContentView: View {
     
     @State var isStandby = false
-    @State var isLogIn = false
+    @State var isLogIn = true
     @State var showSignUp = false
+    @State var showCheerPopUp = false
     @State var showPartial = false
     
     @EnvironmentObject var partialSheetManager: PartialSheetManager
@@ -31,6 +32,9 @@ struct ContentView: View {
                         Button(action: {
                             if isLogIn {
                                 print("ログイン中の処理")
+                                withAnimation {
+                                    showCheerPopUp.toggle()
+                                }
                             } else {
                                 showSignUp.toggle()
                             }
@@ -77,11 +81,6 @@ struct ContentView: View {
             VStack {
                 ConfigButton(showPartial: $showPartial)
             }
-            Rectangle()
-                .fill(Color.gray)
-                .frame(height: 400)
-                .cornerRadius(4)
-                .padding(.horizontal, 32)
         }
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.white),
@@ -95,8 +94,10 @@ struct ContentView: View {
             ConfigView(isStandby: $isStandby)
         }
         .partialSheet(isPresented: $showSignUp) {
-//            SignUpView()
             SignUpAnnounce()
+        }
+        if showCheerPopUp {
+            CheerPopUpView(isPopUp: $showCheerPopUp)
         }
     }
 }

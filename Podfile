@@ -8,5 +8,6 @@ target 'Canpine' do
   # Pods for Canpine
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'ExytePopupView'
 
 end
