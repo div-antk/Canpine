@@ -18,6 +18,10 @@ struct MainView: View {
     @State var showCheerPopup = false
     @State var showConfig = false
     
+    @State var name = ""
+    @State var item = ""
+    @State var status = ""
+    
     @EnvironmentObject var partialSheetManager: PartialSheetManager
     
     init() {
@@ -29,13 +33,16 @@ struct MainView: View {
             Color.yellow
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
-                VStack(spacing: 24) {
+                VStack(spacing: 40) {
                     ForEach(usersData) { user in
                         Button(action: {
                             if isLogIn {
                                 print("ログイン中の処理")
                                 withAnimation {
                                     showCheerPopup.toggle()
+                                    name = user.name
+                                    status = user.status
+                                    item = user.item
                                 }
                             } else {
                                 showSignUp.toggle()
@@ -94,8 +101,12 @@ struct MainView: View {
             autohideIn: nil,
             closeOnTap: false
         ) {
-            CheerPopupView(isActiveCheerPopup: $showCheerPopup)
-
+            CheerPopupView(
+                isActiveCheerPopup: $showCheerPopup,
+                name: $name,
+                status: $status,
+                item: $item
+                )
         }
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.white),
@@ -126,7 +137,6 @@ struct ConfigButton: View {
                 Button(action: {
                     showPartial.toggle()
                 }) {
-                    
                     Image(systemName: "gearshape.fill")
                         .foregroundColor(.white)
                         .frame(width: 60, height: 60)
@@ -144,7 +154,8 @@ struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .cornerRadius(8)
-            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
+            // TODO: 影が必要か考える
+            // .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
     }
 }
 

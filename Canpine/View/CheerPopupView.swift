@@ -12,6 +12,9 @@ import ExytePopupView
 struct CheerPopupView: View {
     
     @Binding var isActiveCheerPopup: Bool
+    @Binding var name: String
+    @Binding var status: String
+    @Binding var item: String
     
     var body: some View {
         VStack {
@@ -27,17 +30,18 @@ struct CheerPopupView: View {
                         .foregroundColor(.white)
                 }
             }.padding(EdgeInsets(
-                top: -30, leading: 0, bottom: 0, trailing: 32
+                top: 0, leading: 0, bottom: 0, trailing: 32
             ))
         ZStack {
-            
-            
-            Text("opup")
+            Text("\(status)の\n\(name)さんとカンパイする？")
+                .font(.system(size: 14))
+
         }
         .frame(maxWidth: .infinity, minHeight: 200)
         .background(Color.white)
         .cornerRadius(12)
         .padding(.horizontal, 32)
+        .padding(.bottom, 80)
         }
     }
 }
