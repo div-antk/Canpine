@@ -83,6 +83,10 @@ struct MainView: View {
             VStack {
                 ConfigButton(showPartial: $showConfig)
             }
+            if showCheerPopup {
+                Color.black.opacity(0.5)
+                    .edgesIgnoringSafeArea(.all)
+            }
         }
         .popup(
             isPresented: $showCheerPopup,
@@ -96,7 +100,7 @@ struct MainView: View {
             background: .solid(Color.white),
             handlerBarColor: Color.white,
             enableCover: true, // 背景タップの許可
-            coverColor: Color.black.opacity(0.4), // 背景
+            coverColor: Color.black.opacity(0.5), // 背景
             cornerRadius: 4,
             minTopDistance: 0 // 上部から最低どれくらい空けるか
         ))
