@@ -14,14 +14,30 @@ struct CheerPopupView: View {
     @Binding var isActiveCheerPopup: Bool
     
     var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    isActiveCheerPopup = false
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                        .foregroundColor(.white)
+                }
+            }.padding(EdgeInsets(
+                top: -30, leading: 0, bottom: 0, trailing: 32
+            ))
         ZStack {
             
             
             Text("opup")
         }
         .frame(maxWidth: .infinity, minHeight: 200)
-        .background(Color(red: 0.85, green: 0.8, blue: 0.95))
+        .background(Color.white)
         .cornerRadius(12)
         .padding(.horizontal, 32)
+        }
     }
 }

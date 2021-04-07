@@ -83,6 +83,7 @@ struct MainView: View {
             VStack {
                 ConfigButton(showPartial: $showConfig)
             }
+            // カンパイ画面を出した際に背景を暗くする
             if showCheerPopup {
                 Color.black.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
