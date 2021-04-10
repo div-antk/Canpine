@@ -33,26 +33,30 @@ struct CheerPopupView: View {
                 top: 0, leading: 0, bottom: 0, trailing: 32
             ))
             ZStack {
-                VStack(spacing: 24) {
+                VStack(spacing: 20) {
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(height: 140)
+                    Spacer()
                     Text(status)
-                        .font(.system(size: 14, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         + Text("の\n")
-                        .font(.system(size: 14))
+                        .font(.system(size: 16))
                         + Text(name)
-                        .font(.system(size: 14, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         + Text("さんとカンパイする？")
-                        .font(.system(size: 14))
+                        .font(.system(size: 16))
                     Button(action: {
                         isActiveCheerPopup = false
                     }) {
                         Text("🍻")
                             .font(.system(size: 32))
-                            .frame(width: 60, height: 60)
+                            .frame(width: 80, height: 80)
                             .background(Color.white)
-                            .cornerRadius(30.0)                    }
+                            .cornerRadius(40.0)                    }
                 }
             }
-            .frame(maxWidth: .infinity, minHeight: 200)
+            .frame(maxWidth: .infinity, minHeight: 320)
             .background(Color.orange)
             .cornerRadius(12)
             .padding(.horizontal, 32)
