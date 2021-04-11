@@ -30,7 +30,7 @@ struct MainView: View {
     var body: some View {
         ZStack {
             // 背景色
-            Color.yellow
+            Color.orange
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack(spacing: 40) {

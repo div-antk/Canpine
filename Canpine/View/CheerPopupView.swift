@@ -34,18 +34,26 @@ struct CheerPopupView: View {
             ))
             ZStack {
                 VStack(spacing: 20) {
+                    // イメージ画像が設定されていない場合はアイコン画像を表示しない（UIをビールに見立てる）
+                    ZStack {
                     Rectangle()
                         .fill(Color.white)
-                        .frame(height: 140)
+                        .frame(height: 100)
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60)
+//                        .padding(.bottom, -240)
+                    }
                     Spacer()
                     Text(status)
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.system(size: 14, weight: .bold))
                         + Text("の\n")
-                        .font(.system(size: 16))
+                        .font(.system(size: 14))
                         + Text(name)
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.system(size: 14, weight: .bold))
                         + Text("さんとカンパイする？")
-                        .font(.system(size: 16))
+                        .font(.system(size: 14))
                     Button(action: {
                         isActiveCheerPopup = false
                     }) {
@@ -53,10 +61,12 @@ struct CheerPopupView: View {
                             .font(.system(size: 32))
                             .frame(width: 80, height: 80)
                             .background(Color.white)
-                            .cornerRadius(40.0)                    }
+                            .cornerRadius(40)
+                            .padding(.bottom, 32)
+                    }
                 }
             }
-            .frame(maxWidth: .infinity, minHeight: 320)
+            .frame(maxWidth: .infinity, maxHeight: 320)
             .background(Color.orange)
             .cornerRadius(12)
             .padding(.horizontal, 32)
