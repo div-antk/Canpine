@@ -35,7 +35,6 @@ struct CheerPopupView: View {
             ZStack {
                 VStack(spacing: 20) {
                     // イメージ画像が設定されていない場合はアイコン画像を表示しない（UIをビールに見立てる）
-                    ZStack {
                     Rectangle()
                         .fill(Color.white)
                         .frame(height: 100)
@@ -43,9 +42,8 @@ struct CheerPopupView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 60)
-//                        .padding(.bottom, -240)
-                    }
-                    Spacer()
+                        .padding(.top, -50)
+//                    Spacer()
                     Text(status)
                         .font(.system(size: 14, weight: .bold))
                         + Text("の\n")
@@ -62,15 +60,14 @@ struct CheerPopupView: View {
                             .frame(width: 80, height: 80)
                             .background(Color.white)
                             .cornerRadius(40)
-                            .padding(.bottom, 32)
                     }
+                    Spacer()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: 320)
             .background(Color.orange)
             .cornerRadius(12)
             .padding(.horizontal, 32)
-            .padding(.bottom, 80)
         }
     }
 }
