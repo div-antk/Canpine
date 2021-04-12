@@ -88,9 +88,8 @@ struct MainView: View {
                     .padding(.horizontal, 24)
                 }
             }
-            VStack {
-                ConfigButton(showPartial: $showConfig)
-            }
+            SearchButton(showSearch: $showSearch)
+            ConfigButton(showPartial: $showConfig)
             // カンパイ画面を出した際に背景を暗くする
             if showCheerPopup {
                 Color.black.opacity(0.5)
@@ -107,7 +106,7 @@ struct MainView: View {
                 name: $name,
                 status: $status,
                 item: $item
-                )
+            )
         }
         .popup(
             isPresented: $showSearch,
@@ -116,9 +115,9 @@ struct MainView: View {
         ) {
             SearchView (
                 showSearch: $showSearch
-                )
+            )
         }
-
+        
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.white),
             handlerBarColor: Color.white,
@@ -161,12 +160,37 @@ struct ConfigButton: View {
     }
 }
 
+struct SearchButton: View {
+    
+    @Binding var showSearch:Bool
+
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    showSearch.toggle()
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.white)
+                        .frame(width: 60, height: 60)
+                        .background(Color.blue)
+                        .cornerRadius(30.0)
+                        .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 16.0, trailing: 16.0))
+                }
+            }
+            Spacer()
+        }
+    }
+}
+
 struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .cornerRadius(8)
-            // TODO: 影が必要か考える
-            // .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
+        // TODO: 影が必要か考える
+        // .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
     }
 }
 
