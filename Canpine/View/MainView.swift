@@ -17,6 +17,7 @@ struct MainView: View {
     @State var showSignUp = false
     @State var showCheerPopup = false
     @State var showConfig = false
+    @State var showSearch = false
     
     @State var name = ""
     @State var item = ""
@@ -108,6 +109,16 @@ struct MainView: View {
                 item: $item
                 )
         }
+        .popup(
+            isPresented: $showSearch,
+            autohideIn: nil,
+            closeOnTap: false
+        ) {
+            SearchView (
+                showSearch: $showSearch
+                )
+        }
+
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.white),
             handlerBarColor: Color.white,
