@@ -52,7 +52,6 @@ struct SearchView: View {
                 }
             }
             Spacer(minLength: 40)
-
         }
         .frame(maxWidth: .infinity, maxHeight: 180)
         .background(Color.white)

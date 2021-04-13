@@ -89,8 +89,8 @@ struct MainView: View {
                 }
             }
             if !showSearch {
-//                transition(.opacity)
                 SearchButton(showSearch: $showSearch)
+                    .animation(.default)
             }
             ConfigButton(showPartial: $showConfig)
             // カンパイ画面を出した際に背景を暗くする
@@ -146,7 +146,7 @@ struct ConfigButton: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    showPartial.toggle()
+                        showPartial.toggle()
                 }) {
                     Image(systemName: "gearshape.fill")
                         .foregroundColor(.white)
@@ -170,7 +170,9 @@ struct SearchButton: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    showSearch.toggle()
+                    withAnimation() {
+                        showSearch.toggle()
+                    }
                 }) {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.white)
