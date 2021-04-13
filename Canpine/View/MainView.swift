@@ -88,7 +88,10 @@ struct MainView: View {
                     .padding(.horizontal, 24)
                 }
             }
-            SearchButton(showSearch: $showSearch)
+            if !showSearch {
+//                transition(.opacity)
+                SearchButton(showSearch: $showSearch)
+            }
             ConfigButton(showPartial: $showConfig)
             // カンパイ画面を出した際に背景を暗くする
             if showCheerPopup || showSearch {
@@ -113,9 +116,7 @@ struct MainView: View {
             autohideIn: nil,
             closeOnTap: false
         ) {
-            SearchView (
-                showSearch: $showSearch
-            )
+                SearchView (showSearch: $showSearch)
         }
         
         .addPartialSheet(style: PartialSheetStyle(

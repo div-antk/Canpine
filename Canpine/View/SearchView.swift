@@ -12,21 +12,52 @@ struct SearchView: View {
     
     @Binding var showSearch: Bool
     @State var userId = ""
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            // TODO: 状態名を考える
-            Text("探しましょう")
+            HStack {
+                Spacer()
+                Button(action: {
+                    showSearch = false
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                        .foregroundColor(.black)
+                        .padding(EdgeInsets(
+                            top: 20, leading: 0, bottom: 12, trailing: 20
+                        ))                }
+            }
+            Text("ユーザーIDをさがす")
                 .font(.system(size: 12, weight: .bold))
                 .padding(.horizontal, 32)
-            TextField(userId, text: $userId)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal, 32)
+            HStack {
+                TextField(userId, text: $userId)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none)
+                    .padding(.leading, 32)
+                Button(action: {
+                    showSearch = false
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 16)
+                        .foregroundColor(.white)
+                        .frame(width: 36, height: 36)
+                        .background(Color.blue)
+                        .cornerRadius(18)
+                        .padding(.trailing, 20)
+                }
+            }
+            Spacer(minLength: 40)
+
         }
         .frame(maxWidth: .infinity, maxHeight: 180)
-            .background(Color.white)
-            .cornerRadius(12)
-            .padding(.horizontal, 32)
+        .background(Color.white)
+        .cornerRadius(12)
+        .padding(.horizontal, 32)
     }
     
 }
