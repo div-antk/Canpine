@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PartialSheet
+import ExytePopupView
 
 struct MainView: View {
     
@@ -99,6 +100,7 @@ struct MainView: View {
                     .edgesIgnoringSafeArea(.all)
             }
         }
+        // カンパイ確認
         .popup(
             isPresented: $showCheerPopup,
             autohideIn: nil,
@@ -111,12 +113,15 @@ struct MainView: View {
                 item: $item
             )
         }
+        // 検索画面
         .popup(
             isPresented: $showSearch,
+            type: .default,
+            position: .top, // 上から出現させる
             autohideIn: nil,
             closeOnTap: false
         ) {
-                SearchView (showSearch: $showSearch)
+            SearchView (showSearch: $showSearch)
         }
         
         .addPartialSheet(style: PartialSheetStyle(
@@ -146,7 +151,7 @@ struct ConfigButton: View {
             HStack {
                 Spacer()
                 Button(action: {
-                        showPartial.toggle()
+                    showPartial.toggle()
                 }) {
                     Image(systemName: "gearshape.fill")
                         .foregroundColor(.white)
@@ -164,7 +169,7 @@ struct ConfigButton: View {
 struct SearchButton: View {
     
     @Binding var showSearch:Bool
-
+    
     var body: some View {
         VStack {
             HStack {
