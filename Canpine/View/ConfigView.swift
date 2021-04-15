@@ -33,6 +33,9 @@ struct ConfigView: View {
                     })
                     .padding(.horizontal, 42)
                 }.padding(.bottom, 8)
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
                 VStack(alignment: .leading, spacing: 4) {
                     // TODO: 状態名を考える
                     Text("どんなきぶん？")
@@ -41,6 +44,9 @@ struct ConfigView: View {
                     TextField(status, text: $status)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 32)
+                }
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     Text("飲みもの🍺")
@@ -51,8 +57,11 @@ struct ConfigView: View {
                         .padding(.horizontal, 32)
                 }
                 .onTapGesture {
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    UIApplication.shared.endEditing()
                 }
+            }
+            .onTapGesture {
+                UIApplication.shared.endEditing()
             }
             .frame(height: 240)
         }

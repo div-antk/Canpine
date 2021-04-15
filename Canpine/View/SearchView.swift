@@ -61,10 +61,9 @@ struct SearchView: View {
         .cornerRadius(12)
         .padding(.horizontal, 32)
         .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            UIApplication.shared.endEditing()
         }
-        .keyboardObserving()
-
+//        .keyboardObserving()
     }
     
 }
