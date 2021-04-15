@@ -19,6 +19,8 @@ struct SearchView: View {
             HStack {
                 Spacer()
                 Button(action: {
+                    // キーボードを閉じる
+                    UIApplication.shared.endEditing()
                     showSearch = false
                 }) {
                     Image(systemName: "xmark.circle.fill")
