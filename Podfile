@@ -9,5 +9,6 @@ target 'Canpine' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'ExytePopupView'
+  pod 'KeyboardObserving'
 
 end

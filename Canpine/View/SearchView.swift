@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ExytePopupView
+import KeyboardObserving
 
 struct SearchView: View {
     
@@ -57,6 +58,11 @@ struct SearchView: View {
         .background(Color.white)
         .cornerRadius(12)
         .padding(.horizontal, 32)
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
+        .keyboardObserving()
+
     }
     
 }
