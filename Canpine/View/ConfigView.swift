@@ -60,9 +60,6 @@ struct ConfigView: View {
                     UIApplication.shared.endEditing()
                 }
             }
-            .onTapGesture {
-                UIApplication.shared.endEditing()
-            }
             .frame(height: 240)
         }
     }

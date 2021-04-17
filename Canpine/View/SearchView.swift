@@ -7,7 +7,7 @@
 
 import SwiftUI
 import ExytePopupView
-import KeyboardObserving
+//import KeyboardObserving
 
 struct SearchView: View {
     
@@ -59,7 +59,8 @@ struct SearchView: View {
         .frame(maxWidth: .infinity, maxHeight: 180)
         .background(Color.white)
         .cornerRadius(12)
-        .padding(.horizontal, 32)
+        .padding(.horizontal, 8)
+        .padding(.bottom, 200)
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
