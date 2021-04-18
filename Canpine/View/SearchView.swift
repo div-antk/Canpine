@@ -56,15 +56,14 @@ struct SearchView: View {
             }
             Spacer(minLength: 40)
         }
-        .frame(maxWidth: .infinity, maxHeight: 180)
+        .frame(maxWidth: .infinity, maxHeight: 160)
         .background(Color.white)
         .cornerRadius(12)
-        .padding(.horizontal, 8)
-        .padding(.bottom, 200)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 240)
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
-//        .keyboardObserving()
     }
     
 }
