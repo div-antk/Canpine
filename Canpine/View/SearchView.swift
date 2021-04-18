@@ -7,7 +7,7 @@
 
 import SwiftUI
 import ExytePopupView
-//import KeyboardObserving
+import KeyboardObserving
 
 struct SearchView: View {
     
@@ -42,6 +42,7 @@ struct SearchView: View {
                     .padding(.leading, 32)
                 Button(action: {
                     showSearch = false
+                    UIApplication.shared.endEditing()
                 }) {
                     Image(systemName: "magnifyingglass")
                         .resizable()
@@ -60,10 +61,12 @@ struct SearchView: View {
         .background(Color.white)
         .cornerRadius(12)
         .padding(.horizontal, 16)
-        .padding(.bottom, 240)
+        .padding(.top, 80)
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
+        Spacer()
+            .keyboardObserving()
     }
     
 }

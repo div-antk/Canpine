@@ -132,6 +132,9 @@ struct MainView: View {
             cornerRadius: 4,
             minTopDistance: 0 // 上部から最低どれくらい空けるか
         ))
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
         .partialSheet(isPresented: $showConfig) {
             ConfigView(isStandby: $isStandby)
         }
