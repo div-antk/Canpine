@@ -17,6 +17,11 @@ struct ConfigView: View {
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .fill(Color.white)
+                .frame(height: 240)
+                .cornerRadius(12)
+                .padding(.horizontal, 16)
             VStack(alignment: .leading, spacing: 8) {
                 Text("カンパイを受ける")
                     .font(.system(size: 12, weight: .bold))
@@ -51,7 +56,7 @@ struct ConfigView: View {
                         .padding(.horizontal, 32)
                 }
             }
-            .frame(height: 240)
+//            .frame(width: 200, height: 240)
         }
     }
 }

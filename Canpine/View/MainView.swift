@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PartialSheet
+import KeyboardObserving
 import ExytePopupView
 
 struct MainView: View {
@@ -122,11 +123,12 @@ struct MainView: View {
             closeOnTap: false
         ) {
             SearchView (showSearch: $showSearch)
+                .keyboardObserving()
         }
         
         .addPartialSheet(style: PartialSheetStyle(
-            background: .solid(Color.white),
-            handlerBarColor: Color.white,
+            background: .solid(Color.clear),
+            handlerBarColor: Color.clear,
             enableCover: true, // 背景タップの許可
             coverColor: Color.black.opacity(0.5), // 背景
             cornerRadius: 4,

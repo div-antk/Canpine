@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ExytePopupView
-import KeyboardObserving
 
 struct SearchView: View {
     
@@ -65,10 +64,9 @@ struct SearchView: View {
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
-        Spacer()
-            .keyboardObserving()
+//        Spacer()
+
     }
-    
 }
 
 //struct SearchView_Previews: PreviewProvider {
