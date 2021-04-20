@@ -94,7 +94,10 @@ struct MainView: View {
                 SearchButton(showSearch: $showSearch)
                     .animation(.default)
             }
-            ConfigButton(showPartial: $showConfig)
+            if !showConfig {
+                ConfigButton(showPartial: $showConfig)
+                    .animation(.default)
+            }
             // カンパイ画面を出した際に背景を暗くする
             if showCheerPopup || showSearch {
                 Color.black.opacity(0.5)

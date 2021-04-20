@@ -19,19 +19,20 @@ struct ConfigView: View {
         ZStack {
             Rectangle()
                 .fill(Color.white)
-                .frame(height: 240)
+                .frame(height: 280)
                 .cornerRadius(12)
-                .padding(.horizontal, 16)
+                .padding(16)
+                .padding(.bottom, 20)
             VStack(alignment: .leading, spacing: 8) {
                 Text("カンパイを受ける")
                     .font(.system(size: 12, weight: .bold))
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, 40)
                 ZStack {
                     Rectangle()
                         .fill(Color.gray.opacity(0.1))
                         .frame(height: 42)
                         .cornerRadius(4)
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 40)
                     Toggle(isOn: $isStandby, label: {
                         Text(isStandby ? "はい" : "いいえ")
                             .font(.system(size: 14, weight: .bold))
@@ -42,21 +43,22 @@ struct ConfigView: View {
                     // TODO: 状態名を考える
                     Text("どんなきぶん？")
                         .font(.system(size: 12, weight: .bold))
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 40)
                     TextField(status, text: $status)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 40)
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     Text("飲みもの🍺")
                         .font(.system(size: 12, weight: .bold))
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 40)
                     TextField(item, text: $item)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 40)
                 }
             }
-//            .frame(width: 200, height: 240)
+            .padding(.bottom, 40)
+            
         }
     }
 }
