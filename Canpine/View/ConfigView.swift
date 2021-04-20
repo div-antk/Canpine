@@ -58,7 +58,6 @@ struct ConfigView: View {
                 }
             }
             .padding(.bottom, 40)
-            
         }
     }
 }

@@ -17,7 +17,7 @@ struct SignUpView: View {
     @State var passWordErrorMessage = ""
     @State var isError = false
     
-    @Binding var isActiveSignUp: Bool
+    @Binding var isShowSignUp: Bool
     
     var body: some View {
         ZStack {
@@ -31,7 +31,7 @@ struct SignUpView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            isActiveSignUp = false
+                            isShowSignUp = false
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .resizable()
@@ -124,6 +124,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(isActiveSignUp: .constant(false))
+        SignUpView(isShowSignUp: .constant(false))
     }
 }

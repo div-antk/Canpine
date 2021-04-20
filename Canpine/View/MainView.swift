@@ -90,6 +90,8 @@ struct MainView: View {
                     .padding(.horizontal, 24)
                 }
             }
+            
+            // アクティブ時にボタンを非表示にする
             if !showSearch {
                 SearchButton(showSearch: $showSearch)
                     .animation(.default)
@@ -98,6 +100,7 @@ struct MainView: View {
                 ConfigButton(showPartial: $showConfig)
                     .animation(.default)
             }
+            
             // カンパイ画面を出した際に背景を暗くする
             if showCheerPopup || showSearch {
                 Color.black.opacity(0.5)
@@ -105,13 +108,9 @@ struct MainView: View {
             }
         }
         // カンパイ確認
-        .popup(
-            isPresented: $showCheerPopup,
-            autohideIn: nil,
-            closeOnTap: false
-        ) {
+        .partialSheet(isPresented: $showCheerPopup) {
             CheerPopupView(
-                isActiveCheerPopup: $showCheerPopup,
+                isShowCheerPopup: $showCheerPopup,
                 name: $name,
                 status: $status,
                 item: $item
