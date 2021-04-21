@@ -41,12 +41,10 @@ struct MainView: View {
                         Button(action: {
                             if isLogIn {
                                 print("ログイン中の処理")
-                                withAnimation {
-                                    showCheerPopup.toggle()
-                                    name = user.name
-                                    status = user.status
-                                    item = user.item
-                                }
+                                showCheerPopup.toggle()
+                                name = user.name
+                                status = user.status
+                                item = user.item
                             } else {
                                 showSignUp.toggle()
                             }
@@ -88,6 +86,7 @@ struct MainView: View {
                     .background(Color.white)
                     .modifier(CardModifier())
                     .padding(.horizontal, 24)
+
                 }
             }
             
@@ -108,6 +107,14 @@ struct MainView: View {
             }
         }
         // カンパイ確認
+        //        .fullScreenCover(isPresented: $showCheerPopup) {
+        //            CheerPopupView(
+        //                isShowCheerPopup: $showCheerPopup,
+        //                name: $name,
+        //                status: $status,
+        //                item: $item
+        //            )
+        //        }
         .partialSheet(isPresented: $showCheerPopup) {
             CheerPopupView(
                 isShowCheerPopup: $showCheerPopup,
