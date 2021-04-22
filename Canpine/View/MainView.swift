@@ -41,10 +41,12 @@ struct MainView: View {
                         Button(action: {
                             if isLogIn {
                                 print("ログイン中の処理")
-                                showCheerPopup.toggle()
-                                name = user.name
-                                status = user.status
-                                item = user.item
+//                                withAnimation {
+                                    showCheerPopup.toggle()
+                                    name = user.name
+                                    status = user.status
+                                    item = user.item
+//                                }
                             } else {
                                 showSignUp.toggle()
                             }
@@ -101,27 +103,10 @@ struct MainView: View {
             }
             
             // カンパイ画面を出した際に背景を暗くする
-            if showCheerPopup || showSearch {
+            if showSearch {
                 Color.black.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
             }
-        }
-        // カンパイ確認
-        //        .fullScreenCover(isPresented: $showCheerPopup) {
-        //            CheerPopupView(
-        //                isShowCheerPopup: $showCheerPopup,
-        //                name: $name,
-        //                status: $status,
-        //                item: $item
-        //            )
-        //        }
-        .partialSheet(isPresented: $showCheerPopup) {
-            CheerPopupView(
-                isShowCheerPopup: $showCheerPopup,
-                name: $name,
-                status: $status,
-                item: $item
-            )
         }
         // 検索画面
         .popup(
@@ -148,6 +133,14 @@ struct MainView: View {
         }
         .partialSheet(isPresented: $showConfig) {
             ConfigView(isStandby: $isStandby)
+        }
+        .partialSheet(isPresented: $showCheerPopup) {
+            CheerPopupView(
+                isShowCheerPopup: $showCheerPopup,
+                name: $name,
+                status: $status,
+                item: $item
+            )
         }
         .partialSheet(isPresented: $showSignUp) {
             SignUpAnnounceView()
