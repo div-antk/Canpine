@@ -38,6 +38,7 @@ struct CheerPopupView: View {
                         .font(.system(size: 14, weight: .bold))
                         + Text("さんとカンパイする？")
                         .font(.system(size: 14))
+                    Spacer()
                     Button(action: {
                         isShowCheerPopup = false
                     }) {
@@ -50,7 +51,7 @@ struct CheerPopupView: View {
                     Spacer()
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: 360)
+            .frame(maxWidth: .infinity, maxHeight: 340)
             .background(Color.orange)
             .cornerRadius(12)
             .padding(.horizontal, 32)

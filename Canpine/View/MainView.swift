@@ -91,7 +91,6 @@ struct MainView: View {
 
                 }
             }
-            
             // アクティブ時にボタンを非表示にする
             if !showSearch {
                 SearchButton(showSearch: $showSearch)
@@ -102,7 +101,7 @@ struct MainView: View {
                     .animation(.default)
             }
             
-            // カンパイ画面を出した際に背景を暗くする
+            // 検索画面を出した際に背景を暗くする
             if showSearch {
                 Color.black.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
@@ -203,7 +202,7 @@ struct SearchButton: View {
 struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .cornerRadius(8)
+            .cornerRadius(12)
         // TODO: 影が必要か考える
         // .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
     }
