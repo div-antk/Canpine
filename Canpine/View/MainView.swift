@@ -41,12 +41,12 @@ struct MainView: View {
                         Button(action: {
                             if isLogIn {
                                 print("ログイン中の処理")
-//                                withAnimation {
-                                    showCheerPopup.toggle()
-                                    name = user.name
-                                    status = user.status
-                                    item = user.item
-//                                }
+                                //                                withAnimation {
+                                showCheerPopup.toggle()
+                                name = user.name
+                                status = user.status
+                                item = user.item
+                                //                                }
                             } else {
                                 showSignUp.toggle()
                             }
@@ -88,23 +88,22 @@ struct MainView: View {
                     .background(Color.white)
                     .modifier(CardModifier())
                     .padding(.horizontal, 24)
-
                 }
             }
-            // アクティブ時にボタンを非表示にする
-            if !showSearch {
-                SearchButton(showSearch: $showSearch)
-                    .animation(.default)
-            }
-            if !showConfig {
-                ConfigButton(showPartial: $showConfig)
-                    .animation(.default)
-            }
-            
-            // 検索画面を出した際に背景を暗くする
-            if showSearch {
-                Color.black.opacity(0.5)
-                    .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                HStack {
+                    SearchButton(showSearch: $showSearch)
+                        .animation(.default)
+                    Spacer()
+                    ConfigButton(showPartial: $showConfig)
+                        .animation(.default)
+                }
+                // 検索画面を出した際に背景を暗くする
+                if showSearch {
+                    Color.black.opacity(0.5)
+                        .edgesIgnoringSafeArea(.all)
+                }
             }
         }
         // 検索画面
@@ -152,22 +151,17 @@ struct ConfigButton: View {
     @Binding var showPartial: Bool
     
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-                Button(action: {
-                    showPartial.toggle()
-                }) {
-                    Image(systemName: "gearshape.fill")
-                        .foregroundColor(.white)
-                        .frame(width: 60, height: 60)
-                        .background(Color.gray)
-                        .cornerRadius(30.0)
-                        .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
-                }
-            }
+        
+        Button(action: {
+            showPartial.toggle()
+        }) {
+            Image(systemName: "gearshape.fill")
+                .foregroundColor(.white)
+                .frame(width: 60, height: 60)
+                .background(Color.gray)
+                .cornerRadius(30.0)
+                .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 32, trailing: 32))
         }
     }
 }
@@ -177,24 +171,20 @@ struct SearchButton: View {
     @Binding var showSearch:Bool
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Button(action: {
-                    withAnimation() {
-                        showSearch.toggle()
-                    }
-                }) {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.white)
-                        .frame(width: 60, height: 60)
-                        .background(Color.blue)
-                        .cornerRadius(30.0)
-                        .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 16.0, trailing: 16.0))
-                }
+        
+        Button(action: {
+            withAnimation() {
+                showSearch.toggle()
             }
-            Spacer()
+        }) {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.white)
+                .frame(width: 60, height: 60)
+                .background(Color.blue)
+                .cornerRadius(30.0)
+                .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                .padding(EdgeInsets(top: 0, leading: 32, bottom: 32, trailing: 0))
+            
         }
     }
 }
