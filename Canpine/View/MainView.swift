@@ -108,16 +108,16 @@ struct MainView: View {
             }
         }
         // 検索画面
-        .popup(
-            isPresented: $showSearch,
-            type: .default,
-            position: .top, // 上から出現させる
-            autohideIn: nil,
-            closeOnTap: false
-        ) {
-            SearchView (showSearch: $showSearch)
-                .keyboardObserving()
-        }
+//        .popup(
+//            isPresented: $showSearch,
+//            type: .default,
+//            position: .top, // 上から出現させる
+//            autohideIn: nil,
+//            closeOnTap: false
+//        ) {
+//            SearchView (showSearch: $showSearch)
+//                .keyboardObserving()
+//        }
         
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.clear),
@@ -129,6 +129,9 @@ struct MainView: View {
         ))
         .onTapGesture {
             UIApplication.shared.endEditing()
+        }
+        .partialSheet(isPresented: $showSearch) {
+            SearchView(showSearch: $showSearch)
         }
         .partialSheet(isPresented: $showConfig) {
             ConfigView(isStandby: $isStandby)
