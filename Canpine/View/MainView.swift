@@ -93,11 +93,12 @@ struct MainView: View {
             VStack {
                 Spacer()
                 HStack {
-                    SearchButton(showSearch: $showSearch)
-                        .animation(.default)
-                    Spacer()
                     ConfigButton(showPartial: $showConfig)
                         .animation(.default)
+                    Spacer()
+                    SearchButton(showSearch: $showSearch)
+                        .animation(.default)
+
                 }
                 // 検索画面を出した際に背景を暗くする
                 if showSearch {
@@ -161,7 +162,7 @@ struct ConfigButton: View {
                 .background(Color.gray)
                 .cornerRadius(30.0)
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 32, trailing: 32))
+                .padding(EdgeInsets(top: 0, leading: 32, bottom: 32, trailing: 0))
         }
     }
 }
@@ -183,7 +184,7 @@ struct SearchButton: View {
                 .background(Color.blue)
                 .cornerRadius(30.0)
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                .padding(EdgeInsets(top: 0, leading: 32, bottom: 32, trailing: 0))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 32, trailing: 32))
             
         }
     }

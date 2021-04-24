@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
-import ExytePopupView
+//import ExytePopupView
+import PartialSheet
 
 struct SearchView: View {
     
+    @EnvironmentObject var partialSheetManager: PartialSheetManager
     @Binding var showSearch: Bool
     @State var userId = ""
     
@@ -64,8 +66,6 @@ struct SearchView: View {
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
-//        Spacer()
-
     }
 }
 
