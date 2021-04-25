@@ -100,25 +100,8 @@ struct MainView: View {
                         .animation(.default)
 
                 }
-                // 検索画面を出した際に背景を暗くする
-                if showSearch {
-                    Color.black.opacity(0.5)
-                        .edgesIgnoringSafeArea(.all)
-                }
             }
         }
-        // 検索画面
-//        .popup(
-//            isPresented: $showSearch,
-//            type: .default,
-//            position: .top, // 上から出現させる
-//            autohideIn: nil,
-//            closeOnTap: false
-//        ) {
-//            SearchView (showSearch: $showSearch)
-//                .keyboardObserving()
-//        }
-        
         .addPartialSheet(style: PartialSheetStyle(
             background: .solid(Color.clear),
             handlerBarColor: Color.clear,
@@ -130,11 +113,12 @@ struct MainView: View {
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
-        .partialSheet(isPresented: $showSearch) {
-            SearchView(showSearch: $showSearch)
-        }
+
         .partialSheet(isPresented: $showConfig) {
             ConfigView(isStandby: $isStandby)
+        }
+        .partialSheet(isPresented: $showSearch) {
+            SearchView(showSearch: $showSearch)
         }
         .partialSheet(isPresented: $showCheerPopup) {
             CheerPopupView(
@@ -177,9 +161,7 @@ struct SearchButton: View {
     var body: some View {
         
         Button(action: {
-            withAnimation() {
                 showSearch.toggle()
-            }
         }) {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.white)

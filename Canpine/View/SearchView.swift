@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//import ExytePopupView
 import PartialSheet
 
 struct SearchView: View {
@@ -17,22 +16,22 @@ struct SearchView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Spacer()
-                Button(action: {
-                    // キーボードを閉じる
-                    UIApplication.shared.endEditing()
-                    showSearch = false
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 28, height: 28)
-                        .foregroundColor(.black)
-                        .padding(EdgeInsets(
-                            top: 20, leading: 0, bottom: 12, trailing: 20
-                        ))                }
-            }
+//            HStack {
+//                Spacer()
+//                Button(action: {
+//                    // キーボードを閉じる
+//                    UIApplication.shared.endEditing()
+//                    showSearch = false
+//                }) {
+//                    Image(systemName: "xmark.circle.fill")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 28, height: 28)
+//                        .foregroundColor(.black)
+//                        .padding(EdgeInsets(
+//                            top: 20, leading: 0, bottom: 12, trailing: 20
+//                        ))                }
+//            }
             Text("ユーザーIDをさがす")
                 .font(.system(size: 12, weight: .bold))
                 .padding(.horizontal, 32)
@@ -56,16 +55,16 @@ struct SearchView: View {
                         .padding(.trailing, 20)
                 }
             }
-            Spacer(minLength: 40)
+//            Spacer(minLength: 40)
         }
         .frame(maxWidth: .infinity, maxHeight: 160)
         .background(Color.white)
         .cornerRadius(12)
-        .padding(.horizontal, 16)
-        .padding(.top, 80)
-        .onTapGesture {
-            UIApplication.shared.endEditing()
-        }
+        .padding(.horizontal, 32)
+//        .padding(.top, 80)
+//        .onTapGesture {
+//            UIApplication.shared.endEditing()
+//        }
     }
 }
 
