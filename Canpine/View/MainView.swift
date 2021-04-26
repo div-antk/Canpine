@@ -7,13 +7,11 @@
 
 import SwiftUI
 import PartialSheet
-import KeyboardObserving
 import ExytePopupView
 
 struct MainView: View {
     
     // 遷移する際の変数は showHoge
-    // モーダルを閉じるための変数は activeHoge
     @State var isStandby = false // カンパイ待ちかどうか
     @State var isLogIn = true
     @State var showSignUp = false
