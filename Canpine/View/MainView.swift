@@ -7,7 +7,9 @@
 
 import SwiftUI
 import PartialSheet
-import ExytePopupView
+
+// ハーフモーダルと干渉してうまく動作しなくなるので不採用。。
+//import KeyboardObserving
 
 struct MainView: View {
     
