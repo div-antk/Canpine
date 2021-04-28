@@ -53,6 +53,11 @@ struct ConfigView: View {
                             .padding(.horizontal, 40)
                     }
                 }
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                    paddingBottom = 200
+                }.onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                    paddingBottom = 0
+                }
                 .frame(maxWidth: .infinity, maxHeight: 280)
                 .background(Color.white)
                 .cornerRadius(12)
@@ -60,7 +65,6 @@ struct ConfigView: View {
                 .padding(.bottom, paddingBottom)
                 .animation(.default)
                 Spacer()
-
         }
     }
 }
