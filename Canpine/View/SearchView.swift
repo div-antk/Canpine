@@ -42,11 +42,10 @@ struct SearchView: View {
                             .padding(.trailing, 20)
                     }
                 }
-                
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)) { _ in
-                paddingBottom = 120
-            }.onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                paddingBottom = 200
+            }.onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
                 paddingBottom = 0
             }
             .frame(maxWidth: .infinity, maxHeight: 160)
@@ -54,6 +53,7 @@ struct SearchView: View {
             .cornerRadius(12)
             .padding(.horizontal, 16)
             .padding(.bottom, paddingBottom)
+            .animation(.default)
             Spacer()
         }
     }
