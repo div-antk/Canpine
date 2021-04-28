@@ -90,15 +90,17 @@ struct MainView: View {
                     .padding(.horizontal, 24)
                 }
             }
-            VStack {
-                Spacer()
-                HStack {
-                    ConfigButton(showPartial: $showConfig)
-                        .animation(.default)
+            // モーダル出現時にボタンを非表示
+            if !showConfig && !showSearch {
+                VStack {
                     Spacer()
-                    SearchButton(showSearch: $showSearch)
-                        .animation(.default)
-
+                    HStack {
+                        ConfigButton(showPartial: $showConfig)
+                            .animation(.default)
+                        Spacer()
+                        SearchButton(showSearch: $showSearch)
+                            .animation(.default)
+                    }
                 }
             }
         }
