@@ -12,10 +12,10 @@ struct SignUpAnnounceView: View {
     @State private var isActiveSignUpAnnounce = false
     
     var body: some View {
-        VStack{
+        VStack(spacing: 16){
             Text("Canpineに登録して\nカンパイしましょう🍻")
                 .font(.system(size: 16, weight: .bold))
-                .padding(.bottom, 16)
+                .padding(.top, 32)
             Button(action: {
                 isActiveSignUpAnnounce = true
             }) {
@@ -26,7 +26,6 @@ struct SignUpAnnounceView: View {
                     .background(Color.orange)
                     .cornerRadius(4)
                     .padding(.horizontal, 32)
-                    .padding(.bottom, 12)
                     .fullScreenCover(isPresented: $isActiveSignUpAnnounce) {
                         SignUpView(isShowSignUp: $isActiveSignUpAnnounce)
                     }
@@ -41,7 +40,6 @@ struct SignUpAnnounceView: View {
                     .frame(width: 24)
                     .background(Color.white)
             }
-            .padding(.bottom, 12)
             Button(action: {
                 isActiveSignUpAnnounce = true
             }) {
@@ -51,6 +49,10 @@ struct SignUpAnnounceView: View {
                     .padding(.bottom, 20)
             }
         }
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .cornerRadius(12)
+        .padding(16)
     }
 }
 

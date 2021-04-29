@@ -15,7 +15,7 @@ struct MainView: View {
     
     // 遷移する際の変数は showHoge
     @State var isStandby = false // カンパイ待ちかどうか
-    @State var isLogIn = true
+    @State var isLogIn = false
     @State var showSignUp = false
     @State var showCheerPopup = false
     @State var showConfig = false
